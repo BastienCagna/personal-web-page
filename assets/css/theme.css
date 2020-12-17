@@ -43,6 +43,10 @@ textarea { width: 100%; }
     margin: 0px;
     padding: 0px;
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .project {
     float: left;
