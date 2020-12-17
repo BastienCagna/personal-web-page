@@ -1,0 +1,80 @@
+body {
+    --main-margin: 20px;
+    --main-small-margin: 8px;
+
+    --main-dark-hue: #287799;
+    --main-light-hue: #47a2cc;
+    --main-light-text: #dce3e6;
+}
+
+section {
+    margin: var(--main-margin) 0px;
+}
+
+h1 { font-size: 20pt; }
+h2 { font-size: 16pt; }
+h3 { font-size: 14pt; }
+p, a, li, td, th, label, input { font-size: 11pt; }
+
+textarea { width: 100%; }
+
+.text-hue { color: #7412b5; }
+
+#page-header {
+    background-color: var(--main-light-hue);
+}
+#page-header p, #page-header a, #page-header h1, #page-header h2 {
+    color: white;
+}
+
+#content>header { 
+    padding: var(--main-margin);
+    background-color: black;
+    text-align: center;
+}
+
+#content>header img {
+    max-width: 100%;
+    max-height: 200px;
+}
+
+#projects + * { clear: both; }
+#projects ul {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+.project {
+    float: left;
+    margin: var(--main-small-margin);
+    padding: var(--main-small-margin);
+    width: 260px;
+    text-align: justify;
+}
+.project img {
+    max-width: 100%;
+    height: 240px;
+}
+.project h3 {
+    margin: var(--main-small-margin);
+    margin-bottom: 0px;
+    text-align: center;
+}
+.content {
+    padding: var(--main-margin);
+}
+
+#page-footer {
+    margin-top: var(--main-margin);
+    margin-bottom: 0px;
+    padding-top: var(--main-margin);
+    text-align: center;
+    color: var(--main-light-text);
+    background-color: var(--main-light-hue);
+    font-size: small;
+}
+#page-footer footer {   
+    padding: var(--main-margin);
+    background-color: var(--main-dark-hue);   
+    font-size: small; 
+}
