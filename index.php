@@ -79,7 +79,7 @@
             <ul>
                 <li class="project">
                     <div class="illustration">
-                        <img src="images/logo_brainrsa.png" />
+                        <img src="images/logo_brainrsa.png" alt="BrainRSA logo"/>
                     </div>
                     <div class="content">
                         <h3>BrainRSA</h3>
@@ -109,7 +109,7 @@
                 </li>-->
                 <li class="project">
                     <div class="illustration">
-                        <img src="images/macapype.png" />
+                        <img src="images/macapype.png" alt="Macapype logo" />
                     </div>
                     <div class="content">
                         <h3>Macapype</h3>
@@ -124,7 +124,7 @@
                 </li>
                 <li class="project">
                     <div class="illustration">
-                        <img src="images/primere.png" />
+                        <img src="images/primere.png" alt="Prime-RE logo"/>
                     </div>
                     <div class="content">
                         <h3>PRIME-RE</h3>
@@ -139,7 +139,7 @@
                     </div>
                 </li>
                 <li class="project">
-                    <img src="images/webbrainviewer_logo.png" />
+                    <img src="images/webbrainviewer_logo.png" alt="WebBrainViewer logo"/>
                     <div class="content">
                         <h3>Web Brain Viewer</h3>
                         <div class="description">
@@ -212,7 +212,7 @@
                 <li><a href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br/> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
                 <li><a href="https://www.sciencedirect.com/science/article/pii/S2352340920300640?via%3Dihub"><b>Single-trial fMRI activation maps measured during the InterTVA event-related voice localizer. A data set ready for inter-subject pattern analysis</b><br/> Virginia Aglieri, Bastien Cagna, Pascal Belin, Sylvain Takerkart. Data in brief, 2020</a></li>
             </ul>
-            <h4>Machine learning - Artificial Intelligence</h4>
+            <h4>Machine Learning - Artificial Intelligence</h4>
             <ul>                <li><a href="https://www.sciencedirect.com/science/article/pii/S089662731931089X"><b>Accelerating the evolution of nonhuman primate neuroimaging</b><br/> Prime-DE consortium. Neuron, 2020</a></li>
 
                 <li><a href="https://www.sciencedirect.com/science/article/pii/S1053811919307967"><b>Inter-subject pattern analysis: A straightforward and powerful scheme for group-level MVPA</b><br/> Qi Wang, Bastien Cagna, Thierry Chaminade, Sylvain Takerkart. NeuroImage, 2020</a></li>
@@ -249,7 +249,7 @@
                 </div>
                 <div class="col-md-4">
                     <input type="text" id="name" name="name" value="<?php if(isset($name)) echo $name; ?>" />
-                    <input type="text" id="firstname" name="firstname" value="<?php if(isset($fname)) echo $fname; ?>" />
+                    <label for="firstname"></label><input type="text" id="firstname" name="firstname" value="<?php if(isset($fname)) echo $fname; ?>" />
                 </div>
                 <div class="col-md-2">
                     <label for="email">E-Mail: </label>
