@@ -48,9 +48,8 @@
                     <a class="navbar-brand" href="">Bastien Cagna <span class="text-hue">&#x40; Neuroscience</span></a>
                 </div>
                 <ul class="nav">
-                    <li><a class="nav-link active" href="#">Home</a></li>
-                    <li><a class="nav-link" href="#resources">Resources</a></li>
                     <li><a class="nav-link" href="#projects">Projects</a></li>
+                    <li><a class="nav-link" href="#resources">Resources</a></li>
                     <li><a class="nav-link" href="#publications">Publications</a></li>
                     <li><a class="nav-link" href="#contact">Contact me</a></li>
                 </ul>
@@ -209,7 +208,7 @@
             <h3>Articles</h3>
             <h4>fMRI analysis</h4>
             <ul>
-                <li><a href=""><b>FMRI-based identity classification accuracy in left temporal and frontal regions predicts speaker recognition performance</b><br/> Virginia Aglieri, Bastien Cagna, Laurent Velly, Sylvain Takerkart, Pascal Belin. Scientific Report, 2021.</a></li>
+                <!--<li><a href=""><b>FMRI-based identity classification accuracy in left temporal and frontal regions predicts speaker recognition performance</b><br/> Virginia Aglieri, Bastien Cagna, Laurent Velly, Sylvain Takerkart, Pascal Belin. Scientific Report, 2021.</a></li>-->
                 <li><a href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br/> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
                 <li><a href="https://www.sciencedirect.com/science/article/pii/S2352340920300640?via%3Dihub"><b>Single-trial fMRI activation maps measured during the InterTVA event-related voice localizer. A data set ready for inter-subject pattern analysis</b><br/> Virginia Aglieri, Bastien Cagna, Pascal Belin, Sylvain Takerkart. Data in brief, 2020</a></li>
             </ul>
@@ -278,7 +277,7 @@
     <div class="col-md-2">
     </div>
     <footer id="page-footer">
-        <p>Last update: 18/12/2020</p>
+        <p>Last update: <?php echo date("D d M Y", getlastmod()); ?></p>
         <!--<a href="https://www.linkedin.com/in/bastien-cagna-a0a1066b"><img src="images/logo_linkedin.png" width=60 heigt="auto"></a>
         <a href="https://twitter.com/O_OBastien"><img src="images/logo_twitter.png" width=60 heigt="auto"></a>-->
         <footer>
