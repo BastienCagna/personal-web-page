@@ -145,8 +145,8 @@
                         <div class="description">
                             <p>A javascript viewer made to look at volumic and surfacic brain data online.</p>
                             <ul class="links">
-                                <li><a href="http://viewer.bablab.fr">Demo</a></li>
-                                <li><a href="">Documentation</a></li>
+                                <li><a href="http://bablab.fr/web-brain-viewer">Demo</a></li>
+                                <li><a href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
                                 <li><a href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
                             </ul>
                         </div>
@@ -185,7 +185,7 @@
                     </header>
                     <ul>
                         <li><a href="https://openneuro.org/datasets/ds001771">InterTVA (link to openneuro.org)</a></li>
-                        <li><a href="https://zenodo.org/record/2591038#.XpIBNaY6-is">VoiceLocalizer beta maps (link to neurovault.org)</a></li>
+                        <li><a href="https://zenodo.org/record/2591038#.XpIBNaY6-is">VoiceLocalizer beta maps (link to zenodo.org)</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
@@ -193,8 +193,9 @@
                         <h3>Presentations</h3>
                     </header>
                     <ul>
-                        <li><a href="">RMN - December 2018</a></li>
-                        <li><a href="">RSA Analysis on block design voice localizer - 2020</a></li>
+                        <li><a href="./content/presentations/PresMacapype-RMN10092020_final.pdf">Macapype - September 2020</a></li>
+                        <li><a href="./content/presentations/RMN_20_12_2018.pdf">RMN - December 2018</a></li>
+                        <!--<li><a href="">RSA Analysis on block design voice localizer - 2020</a></li>-->
                     </ul>
                 </div>
             </div>
@@ -208,7 +209,7 @@
             <h3>Articles</h3>
             <h4>fMRI analysis</h4>
             <ul>
-                <!--<li><a href=""><b>FMRI-based identity classification accuracy in left temporal and frontal regions predicts speaker recognition performance</b><br/> Virginia Aglieri, Bastien Cagna, Laurent Velly, Sylvain Takerkart, Pascal Belin. Scientific Report, 2021.</a></li>-->
+                <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803954/"><b>FMRI-based identity classification accuracy in left temporal and frontal regions predicts speaker recognition performance</b><br/> Virginia Aglieri, Bastien Cagna, Laurent Velly, Sylvain Takerkart, Pascal Belin. Scientific Report, 2021.</a></li>-->
                 <li><a href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br/> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
                 <li><a href="https://www.sciencedirect.com/science/article/pii/S2352340920300640?via%3Dihub"><b>Single-trial fMRI activation maps measured during the InterTVA event-related voice localizer. A data set ready for inter-subject pattern analysis</b><br/> Virginia Aglieri, Bastien Cagna, Pascal Belin, Sylvain Takerkart. Data in brief, 2020</a></li>
             </ul>
