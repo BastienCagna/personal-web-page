@@ -23,7 +23,7 @@
         </header>
         <section>
             <h3>1 - Requirements</h3>
-            <p>Singularity 3.7 is needed.</p>
+            <p>Python and Singularity 3.7 is needed. Read <a href="https://brainvisa.info/web/download.html">the download page of the Brainvisa website</a> to install them.</p>
             <!--<h3>2 - Install Casa-distro</h3>
             <p>Clone <a href="https://github.com/brainvisa/casa-distro">the git repository of casa-distro</a></p>
             <code>
@@ -43,14 +43,14 @@
             <p><a href="https://new.brainvisa.info/download/">Here</a> are all downloads of Brainvisa. Download casa-dev
                 version in the distros directory (example for Brainvisa 5.0.1):</p>
             <code>
-                mkdir $HOME/brainvisa
-                cd $HOME/brainvisa
-                wget https://new.brainvisa.info/download/casa-dev-5.0-1.sif
+                <p>mkdir $HOME/brainvisa</p>
+                <p>cd $HOME/brainvisa</p>
+                <p>wget https://new.brainvisa.info/download/casa-dev-5.0-1.sif</p>
             </code>
             <p>Then install the container with casa-distro:</p>
             <code>
-                mkdir $HOME/brainvisa/brainvisa
-                singularity run -B $HOME/brainvisa/brainvisa:/casa/setup casa-dev-5.0-1.sif brainvisa master
+                <p>mkdir $HOME/brainvisa/brainvisa</p>
+                <p>singularity run -B $HOME/brainvisa/brainvisa:/casa/setup casa-dev-5.0-1.sif brainvisa master</p>
             </code>
             <p>Finally you can edit your $HOME/.bashrc file to add the bin folder to the system path. To do so, add:</p>
             <code>
@@ -64,39 +64,57 @@
                 (<a href="https://bioproj.extra.cea.fr/">https://bioproj.extra.cea.fr</a>) and edit
                 $HOME/brainvisa/brainvisa/conf/svn.secret to set your credentials.</p>
             <h3>3 - Compile Brainvisa with Python 3</h3>
-            <p>Start the container:</p>
-            <code>
-                bv bash
-            </code>
-            <p>To compile Brainvisa using Python 3, edit the configuration file with nano:</p>
-            <code>
-                nano /casa/host/conf/bv_maker.cfg
-            </code>
-            <blockquote>
-                <p>[ source $CASA_SRC ]</p>
-                <p>brainvisa <b>standard</b> $CASA_BRANCH</p>
-                <p>	&nbsp;</p>
-                <p>[ build $CASA_BUILD ]</p>
-                <p>default_steps = configure build doc</p>
-                <p>make_options = -j$NCPU</p>
-                <p> <b>cmake_options = -DPYTHON_EXECUTABLE=/usr/bin/python3</b></p>
-                <p>build_type = Release</p>
-                <p>packaging_thirdparty = OFF</p>
-                <p>clean_config = ON</p>
-                <p>clean_build = ON</p>
-                <p>test_ref_data_dir = $CASA_TESTS/ref</p>
-                <p>test_run_data_dir = $CASA_TESTS/test</p>
-                <p>brainvisa <b>standard</b> $CASA_BRANCH $CASA_SRC</p>
-            </blockquote>
-            <p>Then start to compile everything simply running:</p>
-            <code>
-                bv_maker
-            </code>
+            <div class="row">
+                <div class="col-6">
+                    <p>Start the container:</p>
+                    <code>
+                        bv bash
+                    </code>
+                    <p>To compile Brainvisa using Python 3, edit the configuration file with nano:</p>
+                    <code>
+                        nano /casa/host/conf/bv_maker.cfg
+                    </code>
+                    <blockquote>
+                        <p>[ source $CASA_SRC ]</p>
+                        <p>brainvisa <b>standard</b> $CASA_BRANCH</p>
+                        <p>	&nbsp;</p>
+                        <p>[ build $CASA_BUILD ]</p>
+                        <p>default_steps = configure build doc</p>
+                        <p>make_options = -j$NCPU</p>
+                        <p> <b>cmake_options = -DPYTHON_EXECUTABLE=/usr/bin/python3</b></p>
+                        <p>build_type = Release</p>
+                        <p>packaging_thirdparty = OFF</p>
+                        <p>clean_config = ON</p>
+                        <p>clean_build = ON</p>
+                        <p>test_ref_data_dir = $CASA_TESTS/ref</p>
+                        <p>test_run_data_dir = $CASA_TESTS/test</p>
+                        <p>brainvisa <b>standard</b> $CASA_BRANCH $CASA_SRC</p>
+                    </blockquote>
+                    <p>Then start to compile everything simply running:</p>
+                    <code>
+                        bv_maker
+                    </code>
+                    <p>When finished, exit from the container. Now you should be able to run "brainvisa" command directly from
+                        your computer (without openning the container).</p>
+                    <p>Notes that to use GPU you will need to open the container specifying the opengl argument like this:</p>
+                    <code>
+                        bv opengl=nv bash
+                    </code>
+                </div>
+                <figure class="col-6">
+                    <img src="../images/brainvisa_first_prompt.png" width="auto" height="600px"
+                         alt="Brainvisa's first prompt"/>
+                    <figcaption>
+                        First prompts of Brainvisa
+                    </figcaption>
+                </figure>
+            </div>
+
             <h3>4 - Install Pycharm in the singularity image</h3>
             <p>Start the container (<code>bv bash</code>) and then:</p>
             <code>
-            mkdir /casa/home/soft
-            cd /casa/home/soft
+                <p>mkdir /casa/home/soft</p>
+                <p>cd /casa/home/soft</p>
             </code>
             <p>To download Pycharm Community (arround 500Mo), get a download link <a href="https://www.jetbrains.com/fr-fr/pycharm/download/#section=linux">here</a> by
                 clicking on download and then copy the "direct link" in this wget command line: </p>
@@ -127,5 +145,15 @@
 
         </section>
     </article>
+    <footer id="page-footer">
+        <p>Last update: <?php echo date("D d M Y", getlastmod()); ?></p>
+        <!--<a href="https://www.linkedin.com/in/bastien-cagna-a0a1066b"><img src="images/logo_linkedin.png" width=60 heigt="auto"></a>
+        <a href="https://twitter.com/O_OBastien"><img src="images/logo_twitter.png" width=60 heigt="auto"></a>-->
+        <footer>
+            <p>&copy; Bastien Cagna</p>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
 </body>
 </html>
