@@ -79,7 +79,7 @@
             </header>
             <ul>
                 <li class="project">
-                    <div class="illustration">
+                 <!--   <div class="illustration">
                         <img src="images/logo_brainrsa.png" alt="BrainRSA logo"/>
                     </div>
                     <div class="content">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                 </li>
-                <!--<li class="project">
+                <li class="project">
                     <div class="illustration">
                         <img src="images/logo_ipd.png" />
                     </div>
@@ -140,7 +140,9 @@
                     </div>
                 </li>
                 <li class="project">
-                    <img src="images/webbrainviewer_logo.png" alt="WebBrainViewer logo"/>
+                    <div class="illustration">
+                        <img src="images/wbv-logo.png" alt="WebBrainViewer logo"/>
+                    </div>
                     <div class="content">
                         <h3>Web Brain Viewer</h3>
                         <div class="description">
