@@ -39,6 +39,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/home.css">
 </head>
 <body>
     <header id="page-header">
@@ -216,12 +217,11 @@
             <h4>fMRI analysis</h4>
             <ul>
                 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803954/"><b>FMRI-based identity classification accuracy in left temporal and frontal regions predicts speaker recognition performance</b><br/> Virginia Aglieri, Bastien Cagna, Laurent Velly, Sylvain Takerkart, Pascal Belin. Scientific Report, 2021.</a></li>
-                <li><a href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br/> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
                 <li><a href="https://www.sciencedirect.com/science/article/pii/S2352340920300640?via%3Dihub"><b>Single-trial fMRI activation maps measured during the InterTVA event-related voice localizer. A data set ready for inter-subject pattern analysis</b><br/> Virginia Aglieri, Bastien Cagna, Pascal Belin, Sylvain Takerkart. Data in brief, 2020</a></li>
             </ul>
             <h4>Machine Learning - Artificial Intelligence</h4>
-            <ul>                <li><a href="https://www.sciencedirect.com/science/article/pii/S089662731931089X"><b>Accelerating the evolution of nonhuman primate neuroimaging</b><br/> Prime-DE consortium. Neuron, 2020</a></li>
-
+            <ul>
+                <li><a href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br/> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
                 <li><a href="https://www.sciencedirect.com/science/article/pii/S1053811919307967"><b>Inter-subject pattern analysis: A straightforward and powerful scheme for group-level MVPA</b><br/> Qi Wang, Bastien Cagna, Thierry Chaminade, Sylvain Takerkart. NeuroImage, 2020</a></li>
             </ul>
             <h4>Others</h4>

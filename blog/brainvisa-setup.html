@@ -11,7 +11,7 @@
         <nav class="container navbar justify-content-center">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="">Bastien Cagna <span class="text-hue">&#x40; Neuroscience</span></a>
+                    <a class="navbar-brand" href="">Bastien Cagna <span class="text-hue">&#x40; Neuroscience</a>
                 </div>
                 <a class="nav-link" href="../">Back</a>
             </div>
@@ -26,80 +26,65 @@
             <p>Python and Singularity 3.7 is needed. Read <a href="https://brainvisa.info/web/download.html">the download page of the Brainvisa website</a> to install them.</p>
             <!--<h3>2 - Install Casa-distro</h3>
             <p>Clone <a href="https://github.com/brainvisa/casa-distro">the git repository of casa-distro</a></p>
-            <code>
+            <pre>
                 git clone https://github.com/brainvisa/casa-distro.git
-            </code>
+            </pre>
             <p>Move to version 3.0:</p>
-            <code>
+            <pre>
                 cd casa-distro
                 git checkout 3.0
-            </code>
+            </pre>
             <p>And then setup the environment variable to specify where you want to download container images:</p>
-            <code>
+            <pre>
                 mkdir $HOME/distros
                 export CASA_BASE_DIRECTORY="$HOME/distros"
-            </code>-->
+            </pre>-->
             <h3>2 - Download Brainvisa</h3>
             <p><a href="https://new.brainvisa.info/download/">Here</a> are all downloads of Brainvisa. Download casa-dev
                 version in the distros directory (example for Brainvisa 5.0.1):</p>
-            <code>
-                <p>mkdir $HOME/brainvisa</p>
-                <p>cd $HOME/brainvisa</p>
-                <p>wget https://new.brainvisa.info/download/casa-dev-5.0-1.sif</p>
-            </code>
+            <pre>
+mkdir $HOME/brainvisa
+cd $HOME/brainvisa
+wget https://new.brainvisa.info/download/casa-dev-5.0-1.sif</pre>
             <p>Then install the container with casa-distro:</p>
-            <code>
-                <p>mkdir $HOME/brainvisa/brainvisa</p>
-                <p>singularity run -B $HOME/brainvisa/brainvisa:/casa/setup casa-dev-5.0-1.sif brainvisa master</p>
-            </code>
+            <pre>
+mkdir $HOME/brainvisa/brainvisa
+singularity run -B $HOME/brainvisa/brainvisa:/casa/setup casa-dev-5.0-1.sif brainvisa master</pre>
             <p>Finally you can edit your $HOME/.bashrc file to add the bin folder to the system path. To do so, add:</p>
-            <code>
-                export PATH="$HOME/brainvisa/brainvisa/bin:$PATH"
-            </code>
+            <pre>export PATH="$HOME/brainvisa/brainvisa/bin:$PATH"</pre>
             <p>Using nano (ctrl+X and Y and Enter to save and quit):</p>
-            <code>
-                nano ~/.bashrc
-            </code>
-            <p>If you want include non opensource projects, you need a BioProj account
+            <pre>nano ~/.bashrc</pre>
+            <!--<p>If you want include non opensource projects, you need a BioProj account
                 (<a href="https://bioproj.extra.cea.fr/">https://bioproj.extra.cea.fr</a>) and edit
-                $HOME/brainvisa/brainvisa/conf/svn.secret to set your credentials.</p>
+                $HOME/brainvisa/brainvisa/conf/svn.secret to set your credentials.</p>-->
             <h3>3 - Compile Brainvisa with Python 3</h3>
             <div class="row">
                 <div class="col-6">
                     <p>Start the container:</p>
-                    <code>
-                        bv bash
-                    </code>
+                    <pre>bv bash</pre>
                     <p>To compile Brainvisa using Python 3, edit the configuration file with nano:</p>
-                    <code>
-                        nano /casa/host/conf/bv_maker.cfg
-                    </code>
-                    <blockquote>
-                        <p>[ source $CASA_SRC ]</p>
-                        <p>brainvisa <b>standard</b> $CASA_BRANCH</p>
-                        <p>	&nbsp;</p>
-                        <p>[ build $CASA_BUILD ]</p>
-                        <p>default_steps = configure build doc</p>
-                        <p>make_options = -j$NCPU</p>
-                        <p> <b>cmake_options = -DPYTHON_EXECUTABLE=/usr/bin/python3</b></p>
-                        <p>build_type = Release</p>
-                        <p>packaging_thirdparty = OFF</p>
-                        <p>clean_config = ON</p>
-                        <p>clean_build = ON</p>
-                        <p>test_ref_data_dir = $CASA_TESTS/ref</p>
-                        <p>test_run_data_dir = $CASA_TESTS/test</p>
-                        <p>brainvisa <b>standard</b> $CASA_BRANCH $CASA_SRC</p>
-                    </blockquote>
+                    <pre>nano /casa/host/conf/bv_maker.cfg</pre>
+                    <pre>
+[ source $CASA_SRC ]
+brainvisa <b>standard</b> $CASA_BRANCH
+    &nbsp;
+[ build $CASA_BUILD ]
+default_steps = configure build doc
+<p>make_options = -j$NCPU</p>
+ <b>cmake_options = -DPYTHON_EXECUTABLE=/usr/bin/python3</b>
+build_type = Release
+packaging_thirdparty = OFF
+clean_config = ON
+clean_build = ON
+test_ref_data_dir = $CASA_TESTS/ref
+test_run_data_dir = $CASA_TESTS/test
+brainvisa <b>standard</b> $CASA_BRANCH $CASA_SRC</pre>
                     <p>Then start to compile everything simply running:</p>
-                    <code>
-                        bv_maker
-                    </code>
+                    <pre>bv_maker</pre>
                     <p>When finished, exit from the container. Now you should be able to run "brainvisa" command directly from
                         your computer (without openning the container).</p>
                     <p>Notes that to use GPU you will need to open the container specifying the opengl argument like this:</p>
-                    <code>
-                        bv opengl=nv bash
-                    </code>
+                    <pre>bv opengl=nv bash</pre>
                 </div>
                 <figure class="col-6">
                     <img src="../images/brainvisa_first_prompt.png" width="auto" height="600px"
@@ -111,38 +96,28 @@
             </div>
 
             <h3>4 - Install Pycharm in the singularity image</h3>
-            <p>Start the container (<code>bv bash</code>) and then:</p>
-            <code>
-                <p>mkdir /casa/home/soft</p>
-                <p>cd /casa/home/soft</p>
-            </code>
+            <p>Start the container (<pre>bv bash</pre>) and then:</p>
+            <pre>
+mkdir /casa/home/soft
+cd /casa/home/soft</pre>
             <p>To download Pycharm Community (arround 500Mo), get a download link <a href="https://www.jetbrains.com/fr-fr/pycharm/download/#section=linux">here</a> by
                 clicking on download and then copy the "direct link" in this wget command line: </p>
-            <code>
-                wget [copy direct link here] -O pycharm-community-2020.3.5.tar.gz
-            </code>
+            <pre>wget [copy direct link here] -O pycharm-community-2020.3.5.tar.gz</pre>
 
             <p>Uncompress the archive:</p>
-            <code>
-                tar -xf pycharm-community-2020.3.5.tar.gz
-            </code>
+            <pre>tar -xf pycharm-community-2020.3.5.tar.gz</pre>
             <p>Edit bashrc to easily start pycharm next time: Add this line a the end of the file:</p>
             <blockquote>
                 alias pycharm="/casa/home/soft/pycharm-community-2020.3.5/bin/pycharm.sh"
             </blockquote>
             <p>Finally, after having restart the container you can start pycharm like this:</p>
-            <code>
-                pycharm &
-            </code>
+            <pre>pycharm &</pre>
 
             <p> When pycharm start, create a new project, configure the interpreter by clicking on the "..." button
                 using "already installed interpreter", then choose "system interpreter" and select the proper
                 version/executable (the one used by brainvisa). Then, test this single line in a new script
                 (shift+F10 tu run the script):</p>
-            <code>
-                from soma import aims
-            </code>
-
+            <pre>from soma import aims</pre>
         </section>
     </article>
     <footer id="page-footer">

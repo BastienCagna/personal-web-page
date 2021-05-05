@@ -48,9 +48,20 @@ h1, h2, h3, h4, h5, h6 {
     font-family: Lucidatypewriter, monospace;
 }
 
+pre {
+    padding: 1em;
+}
+
+caption, figcaption {
+    font-size: small;
+    text-align: center;
+    font-style: italic;
+}
+
 textarea { width: 100%; }
 
 .text-hue { font-weight: bolder; }
+
 
 #page-header {
     background-color: #1c35b4;
@@ -68,62 +79,6 @@ textarea { width: 100%; }
 #content>header img {
     max-width: 100%;
     max-height: 200px;
-}
-
-#projects + * { clear: both; }
-#projects ul {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-}
-.project {
-    margin: 4px;
-    padding: 4px;
-    text-align: justify;
-    display: flex;
-    flex-direction: row;
-}
-
-.project .illustration {
-    width: 180px;
-    height: 160px;
-    margin: 10px;
-    overflow: hidden;
-}
-.project .illustration img {
-    width: inherit;
-    height: inherit;
-}
-.project h3 {
-    border-bottom: none;
-}
-.project .content {
-    padding: 4px;
-}
-.project .links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.project .links a {
-    background-color: #a3ecf3;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 3px;
-    font-size: 10pt;
-    font-weight: bold;
-}
-.project .links a:hover {
-    background-color: #92d0d6;
-    text-decoration: none;
-}
-
-#firstname {
-    width: 0;
-    height: 0;
-    opacity: 100%;
-    border: 0px;
 }
 
 #page-footer {
