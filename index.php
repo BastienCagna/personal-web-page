@@ -117,8 +117,8 @@
                         <div class="description">
                             <p>The aim of this project is to create a python package that provide all the tools needed to preprocess anatomical data of non humain primate. It also aim to provide a standard pipeline for different species, starting with macaques.</p>
                             <ul class="links">
-                                <li><a href="https://macatools.github.io/macapype/">Documentation</a></li>
-                                <li><a href="https://github.com/Macatools/macapype">Github repository</a></li>
+                                <li><a target="_blank" href="https://macatools.github.io/macapype/">Documentation</a></li>
+                                <li><a target="_blank" href="https://github.com/Macatools/macapype">Github repository</a></li>
                             </ul>
                         </div>
                     </div>
@@ -132,9 +132,9 @@
                         <div class="description">
                             <p>PRIMate-Ressource Exchange aims to provide an overview of the main difficulties and curate a collection of solutions that currently exist within the broader NHP-MRI community for specific processing steps that are commonly performed on NHP MRI data.</p>
                             <ul class="links">
-                                <li><a href="https://prime-re.github.io/">Web page</a></li>
-                                <li><a href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
-                                <li><a href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
+                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
                             </ul>
                         </div>
                     </div>
@@ -148,9 +148,9 @@
                         <div class="description">
                             <p>A javascript viewer made to look at volumic and surfacic brain data online.</p>
                             <ul class="links">
-                                <li><a href="http://bablab.fr/web-brain-viewer/examples">Demo</a></li>
-                                <li><a href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
-                                <li><a href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
+                                <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/examples">Demo</a></li>
+                                <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
+                                <li><a target="_blank" href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
                             </ul>
                         </div>
                     </div>
@@ -194,8 +194,8 @@
                         <h3>Datasets</h3>
                     </header>
                     <ul>
-                        <li><a href="https://openneuro.org/datasets/ds001771">InterTVA (link to openneuro.org)</a></li>
-                        <li><a href="https://zenodo.org/record/2591038#.XpIBNaY6-is">VoiceLocalizer beta maps (link to zenodo.org)</a></li>
+                        <li><a target="_blank" href="https://openneuro.org/datasets/ds001771">InterTVA (link to openneuro.org)</a></li>
+                        <li><a target="_blank" href="https://zenodo.org/record/2591038#.XpIBNaY6-is">VoiceLocalizer beta maps (link to zenodo.org)</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">
