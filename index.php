@@ -60,12 +60,12 @@
     <div class="col-md-2">
     </div>
     <div id="content" class="container col-md-8">
-        <!--<header>
+        <header>
             <img src="images/baniere_neuro.png" />
-        </header>-->
+        </header>
         <section id="intro">
             <div class="jumbotron">
-                <p>After working almost 4 years on preprocessing and analysis of functional MRI data at the
+                <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
                     <a href="http://int.univ-amu.fr">Institut de Neurosciences de la Timone in Marseille, France</a>
                     , I am now working at <a href="https://joliot.cea.fr/drf/joliot/Pages/Entites_de_recherche/NeuroSpin.aspx">Neurospin in Saclays, France</a> on anatomical MRI data. Here you can find
                     some resources that I setup during my job.</p>
@@ -148,7 +148,7 @@
                         <div class="description">
                             <p>A javascript viewer made to look at volumic and surfacic brain data online.</p>
                             <ul class="links">
-                                <li><a href="http://bablab.fr/web-brain-viewer">Demo</a></li>
+                                <li><a href="http://bablab.fr/web-brain-viewer/examples">Demo</a></li>
                                 <li><a href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
                                 <li><a href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
                             </ul>
@@ -187,6 +187,7 @@
                         <h3>Blog</h3>
                     </header>
                     <ul>
+                        <!--<li><a href="blog/fmriprep-setup.html">Install FMRIPrep Environment</a></li>-->
                         <li><a href="blog/brainvisa-setup.html">Install Brainvisa Development Environment</a></li>
                     </ul>
                     <header>
