@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup FMRIPrep Environment</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
+</head>
+<body>
+    <header id="page-header">
+        <nav class="container navbar justify-content-center">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Bastien Cagna <span class="text-hue">&#x40; Neuroscience</a>
+                </div>
+                <a class="nav-link" href="../">Back</a>
+            </div>
+        </nav>
+    </header>
+    <article id="content" class="container col-md-8">
+        <header>
+            <h2>Individual Voice Patch Detection</h2>
+
+        </header>
+        <section>
+            <p><a href="#ref_pernet2017">Pernet et al. (2017)</a> shows that Temporal Voice Area (TVA) hosts several patches.
+            Using a group level analysis, they highlighted the present of 2 or 3 patches but no further
+            studies have been done on those patches. Especially, no study on the actual TVA organisation at the
+            subject level has shown the organisation of those patch. Functional variability across subjects
+            let us imagine that the spatial organization of such narrow patches are probably can lower their
+            detection power at the group level. From this, as presented in <a href="">/article/</a>,
+            we designed a new pipeline to detect those patches directly at the subject level.
+            This page presents the pipeline and an example of use case on the
+            TVA to gives some details on the running procedure and compare results to those obtain by
+            Pernet et al (2017).</p>
+
+            <figure>
+                <figcaption>(A) - Group level results of Pernet et al.(2017)<br />(B) - Our results</figcaption>
+            </figure>
+
+            <h3>The Individual Patch Detection Pipeline</h3>
+            <p>The individual patch detection (IPD) use the variability across trials to power up the localization
+                of activation patterns at the subject level.</p>
+            <p>First, a searchlight classification is computed on the beta maps projected on the subject's cortex
+                surface. This first step output M score map which are used to perform K T-test. Each test use N
+                score maps over the M and output between Tmin and Tmax peaks. Finally, all the peaks are concatainated
+                to compute the density maps.</p>
+            <figure>
+                <figcaption>Individual Patch Detection pipeline</figcaption>
+            </figure>
+        </section>
+        <section>
+            <h3>Use case: Detection individual voice patches</h3>
+            <h4>InterTVA dataset</h4>
+            <p>The InterTVA dataset have been acquired by Virginia Aglieri in 2017 at the
+                <a href="https://irmf.int.univ-amu.fr/">CERIMED center (Institut des Neurosciences de la Timone)</a>
+                in Marseille. It has been designed to study the inter-subjects
+                variabilities in a speaker indentification task. The 40 subjects have passed:</p>
+            <ul>
+                <li>aMRI: T1w + T2w</li>
+                <li>task fMRI: 1x Event related Voice Localizer, 4x Speaker Identification</li>
+                <li>resting fMRI: 1x20min</li>
+                <li>dMRI x 1</li>
+            </ul>
+            <p>The dataset is available on <a href="https://openneuro.org/datasets/ds001771/versions/1.0.2">openneuro.org</a>.
+                To download it, you can use Datalad. If needed install it (more infos
+                <a href="http://handbook.datalad.org/en/latest/intro/installation.html#install">here</a>):</p>
+            <pre>
+sudo apt-get install datalad
+            </pre>
+            Then, install the dataset in the current directory and download all the files (126Go):
+            <pre>
+datalad clone https://github.com/OpenNeuroDatasets/ds001771.git
+datalad get *
+            </pre>
+            <h4>Preprocessing with FMRIPrep</h4>
+            <p>fMRIPrep is an easy way to get a BIDS dataset preprocessed without manually go over each steps.
+                <a href="https://fmriprep.org/en/stable/singularity.html">Learn more</a></p>
+            <p>First, if you have a limited disk space in your home directory, modify tmp and cache directory to a bigger partition (directories must already exist):</p>
+            <pre>
+export SINGULARITY_CACHEDIR="/volatile/home/bc264254/.singularity/cache/"
+export SINGULARITY_TMPDIR="/volatile/home/bc264254/.singularity/tmp/"
+            </pre>
+            <p>Then, to use it with singularity rather than Docker (which need root access), download the docker image
+                and build the corresponding singularity image:</p>
+            <pre>
+singularity build fmriprep-20.2.0.simg docker://nipreps/fmriprep:20.2.1
+            </pre>
+            <p>While singularity is processing, you can ask for a Freesurfer licence
+                <a href="https://surfer.nmr.mgh.harvard.edu/registration.html">here</a>. Then, download it and place
+                it where you want.</p>
+            <p>Finally, run the preprocessing with the following command:</p>
+            <pre>
+singularity run --cleanenv -B /neurospin:/neurospin fmriprep-20.2.0.simg /neurospin/dico/bcagna/data/ds001771 /neurospin/dico/bcagna/data/ds001771_preproc participant --nthreads 32
+            </pre>
+
+            <h4>Denoising with fMRIDenoise</h4>
+            <p>An additional preprocessing is performed by fMRIDenoise to reduce MRI noise in functional timeseries.</p>
+            <a href="https://fmridenoise.readthedocs.io/en/latest/pipelines.html">Documentation</a>
+
+            <h4>Running the IPD</h4>
+            <p>The pipeline have been wrapped in a python package so the first think to do is to verify that *
+                Python 3 is installed on your computer and download the source code and install the package and its
+                dependencies (remove --user if you want/can install the package for all users):</p>
+            <pre>
+git clone https://github.com/BastienCagna/IPD.git
+cd IPD
+python setup.py install --user
+            </pre>
+            <p>Now, you just have to run the IPD/pipelines/patch_detection.py</p>
+            <pre>
+python IPD/pipelines/patch_detection.py ...
+            </pre>
+            <h4>Results</h4>
+            <figure>
+                <figcaption>Individual density maps</figcaption>
+            </figure>
+        </section>
+        <section>
+            <h3>More</h3>
+            <div class="row">
+                <div class="col-md-7">
+                    <h4>Acknowledgement</h4>
+                    <p>This work have been realized through the supervisation of Sylvain Takerkart and the LIVES ANR project.
+                        Virginia Aglieri, Julien Sein, Bruno Nazarian, Jean-Luc Anton and Pascal Belin was in charge of the InterTVA
+                        dataset.</p>
+                </div>
+                <div class="col-md-5">
+                    <h4>Links</h4>
+                    <ul>
+                        <li><a href="https://github.com/BastienCagna/IPD.git" target="_blank">Source code (GitHub)</a></li>
+                        <!--<li><a href="">Jupyter notebook</a></li>-->
+                        <li><a href="">OHBM Poster</a></li>
+                        <li><a href="">IPD documentation</a></li>
+                        <li><a href="https://fmriprep.org/en/stable/index.html">fMRIPrep documentation</a></li>
+                        <li><a href="https://fmridenoise.readthedocs.io/en/latest/">fMRIDenoise documentation</a></li>
+                    </ul>
+                    <h4>Keywords</h4>
+                    <ul>
+                        <li>Multivariate analysis</li>
+                        <li>fMRI</li>
+                    </ul>
+                </div>
+            </div>
+            <h4>References</h4>
+            <ul>
+                <li><a id="ref_pernet2017" href="https://doi.org/10.1016/j.neuroimage.2015.06.050" target="_blank">Cyril R. Pernet, Phil McAleer, Marianne Latinus, Krzysztof J. Gorgolewski, Ian Charest, Patricia E.G. Bestelmeyer, Rebecca H. Watson, David Fleming, Frances Crabbe, Mitchell Valdes-Sosa, Pascal Belin,
+                    The human voice areas: Spatial organization and inter-individual variability in temporal and extra-temporal cortices,
+                    NeuroImage, Volume 119, 2015, Pages 164-174, ISSN 1053-8119</a></li>
+                <li><a id="ref_fmriprep" href=" https://doi.org/10.1038/s41592-018-0235-4">Esteban, O., Markiewicz, C.J., Blair, R.W. et al. fMRIPrep: a robust preprocessing pipeline for functional MRI. Nat Methods 16, 111–116 (2019).</a></li>
+            </ul>
+        </section>
+    </article>
+    <footer id="page-footer">
+        <p>Last update: <?php echo date("D d M Y", getlastmod()); ?></p>
+        <!--<a href="https://www.linkedin.com/in/bastien-cagna-a0a1066b"><img src="images/logo_linkedin.png" width=60 heigt="auto"></a>
+        <a href="https://twitter.com/O_OBastien"><img src="images/logo_twitter.png" width=60 heigt="auto"></a>-->
+        <footer>
+            <p>&copy; Bastien Cagna</p>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

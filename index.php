@@ -60,12 +60,12 @@
     <div class="col-md-2">
     </div>
     <div id="content" class="container col-md-8">
-        <!--<header>
+        <header>
             <img src="images/baniere_neuro.png" />
-        </header>-->
+        </header>
         <section id="intro">
             <div class="jumbotron">
-                <p>After working almost 4 years on preprocessing and analysis of functional MRI data at the
+                <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
                     <a href="http://int.univ-amu.fr">Institut de Neurosciences de la Timone in Marseille, France</a>
                     , I am now working at <a href="https://joliot.cea.fr/drf/joliot/Pages/Entites_de_recherche/NeuroSpin.aspx">Neurospin in Saclays, France</a> on anatomical MRI data. Here you can find
                     some resources that I setup during my job.</p>
@@ -117,8 +117,8 @@
                         <div class="description">
                             <p>The aim of this project is to create a python package that provide all the tools needed to preprocess anatomical data of non humain primate. It also aim to provide a standard pipeline for different species, starting with macaques.</p>
                             <ul class="links">
-                                <li><a href="https://macatools.github.io/macapype/">Documentation</a></li>
-                                <li><a href="https://github.com/Macatools/macapype">Github repository</a></li>
+                                <li><a target="_blank" href="https://macatools.github.io/macapype/">Documentation</a></li>
+                                <li><a target="_blank" href="https://github.com/Macatools/macapype">Github repository</a></li>
                             </ul>
                         </div>
                     </div>
@@ -132,9 +132,9 @@
                         <div class="description">
                             <p>PRIMate-Ressource Exchange aims to provide an overview of the main difficulties and curate a collection of solutions that currently exist within the broader NHP-MRI community for specific processing steps that are commonly performed on NHP MRI data.</p>
                             <ul class="links">
-                                <li><a href="https://prime-re.github.io/">Web page</a></li>
-                                <li><a href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
-                                <li><a href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
+                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
                             </ul>
                         </div>
                     </div>
@@ -148,9 +148,9 @@
                         <div class="description">
                             <p>A javascript viewer made to look at volumic and surfacic brain data online.</p>
                             <ul class="links">
-                                <li><a href="http://bablab.fr/web-brain-viewer">Demo</a></li>
-                                <li><a href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
-                                <li><a href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
+                                <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/examples">Demo</a></li>
+                                <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
+                                <li><a target="_blank" href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
                             </ul>
                         </div>
                     </div>
@@ -187,14 +187,15 @@
                         <h3>Blog</h3>
                     </header>
                     <ul>
+                        <!--<li><a href="blog/fmriprep-setup.html">Install FMRIPrep Environment</a></li>-->
                         <li><a href="blog/brainvisa-setup.html">Install Brainvisa Development Environment</a></li>
                     </ul>
                     <header>
                         <h3>Datasets</h3>
                     </header>
                     <ul>
-                        <li><a href="https://openneuro.org/datasets/ds001771">InterTVA (link to openneuro.org)</a></li>
-                        <li><a href="https://zenodo.org/record/2591038#.XpIBNaY6-is">VoiceLocalizer beta maps (link to zenodo.org)</a></li>
+                        <li><a target="_blank" href="https://openneuro.org/datasets/ds001771">InterTVA (link to openneuro.org)</a></li>
+                        <li><a target="_blank" href="https://zenodo.org/record/2591038#.XpIBNaY6-is">VoiceLocalizer beta maps (link to zenodo.org)</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-6">

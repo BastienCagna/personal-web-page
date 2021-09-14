@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup FMRIPrep Environment</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
+</head>
+<body>
+    <header id="page-header">
+        <nav class="container navbar justify-content-center">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Bastien Cagna <span class="text-hue">&#x40; Neuroscience</a>
+                </div>
+                <a class="nav-link" href="../">Back</a>
+            </div>
+        </nav>
+    </header>
+    <article id="content" class="container col-md-8">
+        <header>
+            <h2>Install FMRIPrep</h2>
+        </header>
+        <section>
+            <p>This web page describes how to install FMRIPrep and all necessary dependencies
+                (like FSL, Freesurfer, ANTS...).</p>
+            <p>The install web page of FMRIPrep list all the necessary dependencies that the pipeline will use.
+                It includes python with some packages, a container system (docker or singularity) and a list of
+                very commonly used free softwares.</p>
+            <p><b>N.B:</b> You will need administrator rights to install dependencies (root access).</p>
+        </section>
+        <section>
+            <h3>1 - Python requirements</h3>
+            <h3>2 - Software dependencies</h3>
+            <p>If some software requires to compile the source code directly on the target machine, most of the tools
+                are just downloaded and extracted.</p>
+            <p><b>N.B:</b> If you are working on a laboratory computer/network, you may be able to skip some part of the
+                installation if some software are already installed (it may require to execute some script to
+                enable them).</p>
+
+            <h4>FSL</h4>
+            FSL highly recommands to use a python script that they setup to download and install the software(4Go):
+            <pre>
+wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+/usr/bin/python fslinstaller.py
+            </pre>
+
+            <h4>ANTS</h4>
+            <p>ANTS installation requires to compile the software directly on your machine which can be a bit tricky
+                but hopefully a github project provide a shell script which do the job. So, just clone the project,
+                execute the script and remove it when ANTS is installed:</p>
+            <pre>
+git clone https://github.com/cookpa/antsInstallExample.git
+./antsInstallExample/installANTs.sh
+            </pre>
+
+            <h4>AFNI</h4>
+            AFNI installation is pretty easy but will be automatically installer in your home directory (in abin/).
+            Note that it can be a problem if you have a quota (I didn't find how to change this default location).
+            <pre>
+cd
+curl -O https://afni.nimh.nih.gov/pub/dist/bin/misc/@update.afni.binaries
+tcsh @update.afni.binaries -package linux_ubuntu_16_64 -do_extras
+mv abin soft/afni
+            </pre>
+
+            <h4>C3D</h4>
+            <pre>
+wget "https://downloads.sourceforge.net/project/c3d/c3d/Nightly/c3d-nightly-Linux-gcc64.tar.gz?ts=gAAAAABg7UtKYSRZrXzH6TQpD0cYys-bKNG2WtV6Hebj9drj7m9_oA67FVuUjtYaeykHX8smaX2olCx2jbcijJw-a2wj5_ueJA%3D%3D&r=https%3A%2F%2Fsourceforge.net%2Fprojects%2Fc3d%2Ffiles%2Fc3d%2FNightly%2Fc3d-nightly-Linux-gcc64.tar.gz%2Fdownload" -O c3d.tar.gz
+tar -xvf c3d.tar.gz
+rm c3d.tar.gz
+            </pre>
+            <h4>Freesurfer</h4>
+            First download the software (4,4Go):
+            <pre>
+wget https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/7.1.1/freesurfer-linux-centos6_x86_64-7.1.1.tar.gz -O freesurfer.tar.gz
+            </pre>
+
+            <h4>ICA-AROMA</h4>
+            <pre>
+wget https://github.com/maartenmennes/ICA-AROMA/archive/e8d7a58.tar.gz -O ica_aroma.tar.gz
+tar -xvf ica_aroma.tar.gz
+mv ICA-AROMA-e8d7a5891563aff7ff71375078314c417d32d808 ICA-AROMA
+rm ica_aroma.tar.gz
+            </pre>
+
+            <h4>BIDS Validator</h4>
+            <p>Simply clone the Github project:</p>
+            <pre>
+git clone https://github.com/bids-standard/bids-validator.git
+            </pre>
+
+            <h4>Connectome Workbench</h4>
+            <pre>
+wget https://www.humanconnectome.org/storage/app/media/workbench/workbench-linux64-v1.5.0.zip
+unzip workbench-linux64-v1.5.0.zip
+rm workbench-linux64-v1.5.0.zip
+            </pre>
+
+            <h4>Add all the binary files to the system path</h4>
+            <p>Now that all the softs are set up, a final step is required to allow to use them by the command line.</p>
+            <p>Open the ~/.bashrc file:</p>
+            <pre>
+gedit ~/.bashrc &
+            </pre>
+            <p>And extend the PATH environment variable by adding all binary folder of the
+                installed software by adding those following lines (modify paths to match your installation directory):</p>
+            <pre>export PATH="/home/bastien/soft/afni/:$PATH"
+export PATH="/home/bastien/soft/ants/build/ANTS-build/Examples/:$PATH"
+export PATH="/home/bastien/soft/bids-validator/bids-validator/bin/:$PATH"
+export PATH="/home/bastien/soft/c3d-1.3.0-Linux-gcc64/bin/:$PATH"
+export PATH="/home/bastien/soft/freesurfer/bin/:$PATH"
+export PATH="/home/bastien/soft/ICA-AROMA/:$PATH"
+export PATH="/home/bastien/soft/workbench/bin_linux64/:$PATH"
+            </pre>
+
+            <h3>3 - Container system</h3>
+            <p>Container systems make an easy way to reproduce configuration of a working environment on any computer.
+            Two close systems are commonly used: Docker and Singularity. If the first is the historical one, the second
+            is preferred for computing clusters (due to security stuffs).</p>
+            <h4>Docker</h4>
+            All needed infos for Ubuntu are on <a href="https://docs.docker.com/engine/install/ubuntu/">this page</a>.
+            In a nut shell, you can just run those lines to download the software:
+            <pre>
+sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+            </pre>
+            <p>Then list available version:</p>
+            <pre>
+    apt-cache madison docker-ce
+            </pre>
+            <p>And finally, install the version you want (for example le first one, for me:5:20.10.7~3-0~ubuntu-bionic):</p>
+            <pre>
+    sudo apt-get install docker-ce=5:20.10.7~3-0~ubuntu-bionic docker-ce-cli=5:20.10.7~3-0~ubuntu-bionic containerd.io
+    sudo docker run hello-world
+            </pre>
+
+            <h4>Singularity</h4>
+            <p>TODO</p>
+
+            <h3>4 - Install FMRIPrep</h3>
+            <p>Now that all the requirements are satisfaied, we can install the pipeline.</p>
+            <p>Using container system make the installation relatively easy by installing the FMRIPrep Docker
+                wrapper package.</p>
+            <pre>
+python -m pip install --user --upgrade fmriprep-docker
+            </pre>
+
+            <h3>5 - Run your first preprocessing</h3>
+            <pre>
+
+            </pre>
+        </section>
+    </article>
+    <footer id="page-footer">
+        <p>Last update: <?php echo date("D d M Y", getlastmod()); ?></p>
+        <!--<a href="https://www.linkedin.com/in/bastien-cagna-a0a1066b"><img src="images/logo_linkedin.png" width=60 heigt="auto"></a>
+        <a href="https://twitter.com/O_OBastien"><img src="images/logo_twitter.png" width=60 heigt="auto"></a>-->
+        <footer>
+            <p>&copy; Bastien Cagna</p>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
