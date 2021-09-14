@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overcoming NPM setup problems</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
+</head>
+<body>
+    <header id="page-header">
+        <nav class="container navbar justify-content-center">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Bastien Cagna <span class="text-hue">&#x40; Neuroscience</a>
+                </div>
+                <a class="nav-link" href="../">Back</a>
+            </div>
+        </nav>
+    </header>
+    <article id="content" class="container col-md-8">
+        <header>
+            <h2>Overcoming NPM setup problems</h2>
+        </header>
+        <section>
+            <h3>Usefull links</h3>
+            <a href="https://stackoverflow.com/questions/45268505/npm-cordova-permissions-error-eacces-permission-denied-scandir">How to change NPM's directory</a>
+            <h3>Updata Node.JS</h3>
+            Update Node.js with Binary Packages
+
+            Updating Node.js with binary packages is the least recommended option. However, if it is the only way you can upgrade to the latest Node.js version, follow the steps outlined below.
+
+            1. Navigate to Node’s official downloads page where you can find all available packages. There you can download the source code or pre-built installer for the LTS versions or the latest release.
+
+            2. You can either download the package from your browser or find the version number you need and add it to the wget command:
+
+            wget https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.xz
+
+            3. Next, install xz-utils used to extract the binary package:
+
+            sudo apt-get install xz-utils
+
+            4. Extract and install the package with the command:
+
+            tar -C /usr/local --strip-components 1 -xJf node-v14.17.0-linux-x64.tar.xz
+
+        </section>
+    </article>
+    <footer id="page-footer">
+        <p>Last update: <?php echo date("D d M Y", getlastmod()); ?></p>
+        <!--<a href="https://www.linkedin.com/in/bastien-cagna-a0a1066b"><img src="images/logo_linkedin.png" width=60 heigt="auto"></a>
+        <a href="https://twitter.com/O_OBastien"><img src="images/logo_twitter.png" width=60 heigt="auto"></a>-->
+        <footer>
+            <p>&copy; Bastien Cagna</p>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

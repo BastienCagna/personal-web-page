@@ -3,6 +3,10 @@ body {
     --main-small-margin: 8px;
 }
 
+.container {
+    max-width: 1000px;
+}
+
 section {
     margin: var(--main-margin) 0px;
 }
