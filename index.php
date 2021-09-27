@@ -232,6 +232,7 @@
             </ul>
             <h4>Others</h4>
             <ul>
+                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811920310041"><b>A collaborative resource platform for non-human primate neuroimaging</b><br/>Adam Messingera, Nikoloz Sirmpilatze et al. NeuroImage, 2021</a></li>
                 <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S089662731931089X"><b>Accelerating the evolution of nonhuman primate neuroimaging</b><br/> Prime-DE consortium. Neuron, 2020</a></li>
             </ul>
             <h3>Posters</h3>
