@@ -197,8 +197,7 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                         <li><a href="blog/brainvisa-setup.html">Install Brainvisa Development Environment</a></li>
                         <li><a href="blog/nibv.html">NIBV - Nipype wraps of BrainVISA processes</a></li>
                     </ul>
-                    <header>ple of running a process with nipype</h3>
-                        <pre>
+                    <pre>
                         <h3>Datasets</h3>
                     </header>
                     <ul>
