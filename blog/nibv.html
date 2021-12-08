@@ -30,7 +30,14 @@
             
             <h3>Automatially generate wraps corresponding to your BrainVISA installation</h3>
             <p>To use it, you need first to <a href="">install BrainVISA using a singularity release</a>. 
-                Then, run the followings lines to download the source and automatically generate the wraps.</p>
+                Then, run the followings lines in a terminal to download the source and automatically generate the wraps.</p>
+            <pre>
+git clone https://github.com/BastienCagna/nibv.git
+cd nibv
+python setup.py develop
+python scripts/generate_wraps.py morphologist ./morphologist.json
+            </pre>
+            <p>N.B: if you have trouble during the installation, try to add "--user" to the python setup.py line to install the package only for you.</p>
             <p>The wraps use the "bv axon-runprocess" command that allow to execute any process when providing 
                 the right inputs. The automatic wrapper read also use this command to list and get metainfos
                 of all the available process. Then it generate the proper python scripts to build the wraps.</p>
