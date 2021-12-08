@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Setup Brainvisa Development Environment</title>
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/theme.css">
+</head>
+<body>
+    <header id="page-header">
+        <nav class="container navbar justify-content-center">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="">Bastien Cagna <span class="text-hue">&#x40; Neuroscience</a>
+                </div>
+                <a class="nav-link" href="../">Back</a>
+            </div>
+        </nav>
+    </header>
+    <article id="content" class="container col-md-8">
+        <header>
+            <h2>Nipype interface of BrainVISA</h2>
+            <h3>How to start BrainVISA process from an python script</h3>
+        </header>
+        <section>
+            <h3>The nibv repository</h3>
+            <p>The <a href="">nibv project available on github</a> provides a wrap for all the BrainVISA processes.
+                </p>
+                <p>To know what is the name of the process you need you can use the BrainVISA GUI to browser all the available node.</p>
+            
+            <h3>Automatially generate wraps corresponding to your BrainVISA installation</h3>
+            <p>To use it, you need first to <a href="">install BrainVISA using a singularity release</a>. 
+                Then, run the followings lines to download the source and automatically generate the wraps.</p>
+            <p>The wraps use the "bv axon-runprocess" command that allow to execute any process when providing 
+                the right inputs. The automatic wrapper read also use this command to list and get metainfos
+                of all the available process. Then it generate the proper python scripts to build the wraps.</p>
+
+            <h3>Example of running a process with nipype</h3>
+            <pre>
+# Import the needed process wrap
+from nibv.interfaces.morphologist import GreyWhiteMesh
+
+# Instantiate a process and set the inputs
+proc = GreyWhiteMesh()
+proc.inputs.hemi_cortex = "/home/bastien/data/archi/t1-1mm-1/002/t1mri/default_acquisition/default_analysis/segmentation/Lcortex_002.nii.gz"
+proc.inputs.white_mesh = "/home/bastien/data/test_greywhitemesh_L002.gii"
+
+# Now, let's work
+proc.run()
+            </pre>
+        </section>
+    </article>
+    <footer id="page-footer">
+        <p>Last update: <?php echo date("D d M Y", getlastmod()); ?></p>
+        <!--<a href="https://www.linkedin.com/in/bastien-cagna-a0a1066b"><img src="images/logo_linkedin.png" width=60 heigt="auto"></a>
+        <a href="https://twitter.com/O_OBastien"><img src="images/logo_twitter.png" width=60 heigt="auto"></a>-->
+        <footer>
+            <p>&copy; Bastien Cagna</p>
+        </footer>
+    </footer>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>

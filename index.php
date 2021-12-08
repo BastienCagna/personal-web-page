@@ -1,37 +1,39 @@
 <!DOCTYPE HTML>
 <?php
-    function secureInput($str) {
-        return htmlspecialchars(trim($str), ENT_QUOTES, "UTF-8");
-    }
+function secureInput($str)
+{
+    return htmlspecialchars(trim($str), ENT_QUOTES, "UTF-8");
+}
 
-    if(isset($_POST['send']) && $_POST['send'] === "Send") {
-        // Verify inputs
-        $name = secureInput($_POST['name']);
-        $fname = secureInput($_POST['firstname']);
-        $subject = secureInput($_POST['subject']);
-        $message = secureInput($_POST['message']);
-        $email= secureInput($_POST['email']);
+if (isset($_POST['send']) && $_POST['send'] === "Send") {
+    // Verify inputs
+    $name = secureInput($_POST['name']);
+    $fname = secureInput($_POST['firstname']);
+    $subject = secureInput($_POST['subject']);
+    $message = secureInput($_POST['message']);
+    $email = secureInput($_POST['email']);
 
-        if(!empty($firstname)) {
-            // Honeypot ! This field is hidden and connot be filled by I human
-            $info_msg = "Thanks";
-        } elseif(empty($name) || empty($message) || empty($email) || empty($subject)) {
-            $msg_error = "At least one field is not filled.";
-        } else {
-            $formcontent="From: $name \n\n Message: \n$message";
-            $recipient = "bastiencagna@gmail.com";
-            $subject = "[WEBPAGE] ".$subject;
-            $mailheader = "From: $email \r\n";
-            mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
-            $info_msg = "Your message have been send to me. I will read it in next hours/days. Thank you.";
-            unset($_POST['name']);
-            unset($_POST['subject']);
-            unset($_POST['message']);
-            unset($_POST['email']);
-        }
+    if (!empty($firstname)) {
+        // Honeypot ! This field is hidden and connot be filled by I human
+        $info_msg = "Thanks";
+    } elseif (empty($name) || empty($message) || empty($email) || empty($subject)) {
+        $msg_error = "At least one field is not filled.";
+    } else {
+        $formcontent = "From: $name \n\n Message: \n$message";
+        $recipient = "bastiencagna@gmail.com";
+        $subject = "[WEBPAGE] " . $subject;
+        $mailheader = "From: $email \r\n";
+        mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
+        $info_msg = "Your message have been send to me. I will read it in next hours/days. Thank you.";
+        unset($_POST['name']);
+        unset($_POST['subject']);
+        unset($_POST['message']);
+        unset($_POST['email']);
     }
+}
 ?>
 <html lang="en">
+
 <head>
     <title>Bastien Cagna</title>
     <meta charset="UTF-8">
@@ -41,6 +43,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/theme.css">
     <link rel="stylesheet" type="text/css" href="assets/css/home.css">
 </head>
+
 <body>
     <header id="page-header">
         <nav class="container navbar justify-content-center">
@@ -70,7 +73,8 @@
                     , I am now working at <a href="https://joliot.cea.fr/drf/joliot/Pages/Entites_de_recherche/NeuroSpin.aspx">
                         Neurospin in Saclays, France</a> on automatic labelling of the brain sulci using deep learning.
                     Here you can find
-                    some resources that I setup during my job.</p>
+                    some resources that I setup during my job.
+                </p>
             </div>
         </section>
 
@@ -81,7 +85,7 @@
             </header>
             <ul>
                 <li class="project">
-                 <!--   <div class="illustration">
+                    <!--   <div class="illustration">
                         <img src="images/logo_brainrsa.png" alt="BrainRSA logo"/>
                     </div>
                     <div class="content">
@@ -127,7 +131,7 @@
                 </li>
                 <li class="project">
                     <div class="illustration">
-                        <img src="images/primere.png" alt="Prime-RE logo"/>
+                        <img src="images/primere.png" alt="Prime-RE logo" />
                     </div>
                     <div class="content">
                         <h3>PRIME-RE</h3>
@@ -143,7 +147,7 @@
                 </li>
                 <li class="project">
                     <div class="illustration">
-                        <img src="images/wbv-logo.png" alt="WebBrainViewer logo"/>
+                        <img src="images/wbv-logo.png" alt="WebBrainViewer logo" />
                     </div>
                     <div class="content">
                         <h3>Web Brain Viewer</h3>
@@ -191,8 +195,10 @@
                     <ul>
                         <!--<li><a href="blog/fmriprep-setup.html">Install FMRIPrep Environment</a></li>-->
                         <li><a href="blog/brainvisa-setup.html">Install Brainvisa Development Environment</a></li>
+                        <li><a href="blog/nibv.html">NIBV - Nipype wraps of BrainVISA processes</a></li>
                     </ul>
-                    <header>
+                    <header>ple of running a process with nipype</h3>
+                        <pre>
                         <h3>Datasets</h3>
                     </header>
                     <ul>
@@ -232,7 +238,7 @@
             </ul>
             <h4>Others</h4>
             <ul>
-                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811920310041"><b>A collaborative resource platform for non-human primate neuroimaging</b><br/>Adam Messingera, Nikoloz Sirmpilatze et al. NeuroImage, 2021</a></li>
+                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811920310041"><b>A collaborative resource platform for non-human primate neuroimaging</b><br/>Adam Messinger, Nikoloz Sirmpilatze et al. NeuroImage, 2021</a></li>
                 <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S089662731931089X"><b>Accelerating the evolution of nonhuman primate neuroimaging</b><br/> Prime-DE consortium. Neuron, 2020</a></li>
             </ul>
             <h3>Posters</h3>
@@ -248,12 +254,12 @@
                 <a href="#">Top</a>
             </header>
             <?php
-                if(isset($msg_error)) {
-                    echo '<div class="failed">'.$msg_error.'</div>';
-                }
-                if(isset($info_msg)) {
-                    echo '<div class="sucess">'.$info_msg.'</div>';
-                }
+            if (isset($msg_error)) {
+                echo '<div class="failed">' . $msg_error . '</div>';
+            }
+            if (isset($info_msg)) {
+                echo '<div class="sucess">' . $info_msg . '</div>';
+            }
             ?>
 
             <p>To contact, please fill all this field to make me able to answer you:</p>
@@ -262,26 +268,26 @@
                     <label for="name">Name: </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" id="name" name="name" value="<?php if(isset($name)) echo $name; ?>" />
-                    <label for="firstname"></label><input type="text" id="firstname" name="firstname" value="<?php if(isset($fname)) echo $fname; ?>" />
+                    <input type="text" id="name" name="name" value="<?php if (isset($name)) echo $name; ?>" />
+                    <label for="firstname"></label><input type="text" id="firstname" name="firstname" value="<?php if (isset($fname)) echo $fname; ?>" />
                 </div>
                 <div class="col-md-2">
                     <label for="email">E-Mail: </label>
                 </div>
                 <div class="col-md-4">
-                    <input type="text" id="email" name="email" value="<?php if(isset($email)) echo $email; ?>" />
+                    <input type="text" id="email" name="email" value="<?php if (isset($email)) echo $email; ?>" />
                 </div>
                 <div class="col-md-2">
                     <label for="subject">Subject: </label>
                 </div>
                 <div class="col-md-10">
-                    <input type="text" id="subject" name="subject" value="<?php if(isset($subject)) echo $subject; ?>" />
+                    <input type="text" id="subject" name="subject" value="<?php if (isset($subject)) echo $subject; ?>" />
                 </div>
                 <div class="col-md-2">
                     <label for="message">Message: </label>
                 </div>
                 <div class="col-md-10">
-                    <textarea id="message" name="message" rows="6"><?php if(isset($name)) echo $name; ?></textarea>
+                    <textarea id="message" name="message" rows="6"><?php if (isset($name)) echo $name; ?></textarea>
                 </div>
                 <input type="submit" id="send" name="send" value="Send" />
             </form>
