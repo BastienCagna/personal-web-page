@@ -1,101 +1,121 @@
 body {
-    --main-margin: 30px;
-    --main-small-margin: 8px;
+  --main-margin: 30px;
+  --main-small-margin: 8px;
 }
 
 .container {
-    max-width: 1000px;
+  max-width: 1000px;
 }
 
 section {
-    margin: var(--main-margin) 0px;
+  margin: var(--main-margin) 0px;
 }
 
 section header a {
-    float: right;
-    font-size: 9pt;
+  float: right;
+  font-size: 9pt;
 }
-
 
 h1 {
-    font-size: 24pt;
+  font-size: 24pt;
 }
 h2 {
-    display: inline-block;
-    clear: both;
-    margin: 8px;
-    margin-bottom: 16px;
-    padding: 6px 12px;
-    border-radius: 12px;
-    background-color: black;
-    color: white;
-    font-size: 18pt;
-    font-weight: bold;
+  display: inline-block;
+  clear: both;
+  margin: 8px;
+  margin-bottom: 16px;
+  padding: 6px 12px;
+  border-radius: 12px;
+  background-color: black;
+  color: white;
+  font-size: 18pt;
+  font-weight: bold;
 }
 h3 {
-    font-size: 16pt;
-    font-weight: bold;
-    border-bottom: 2px solid black;
+  font-size: 16pt;
+  font-weight: bold;
+  border-bottom: 2px solid black;
 }
 h4 {
-    font-size: 14pt;
-    text-align: center;
+  font-size: 14pt;
+  text-align: center;
 }
-p, a, li, td, th, label, input {
-    font-size: 11pt;
-    font-family: Lucidatypewriter, monospace;
+p,
+a,
+li,
+td,
+th,
+label,
+input {
+  font-size: 11pt;
+  font-family: Lucidatypewriter, monospace;
 }
 p {
-    font-family: Georgia, serif;;
+  font-family: Georgia, serif;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: Lucidatypewriter, monospace;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Lucidatypewriter, monospace;
 }
 
 pre {
-    padding: 1em;
+  padding: 1em;
 }
 
-caption, figcaption {
-    font-size: small;
-    text-align: center;
-    font-style: italic;
+figure {
+  text-align: center;
+}
+caption,
+figcaption {
+  font-size: small;
+  text-align: center;
+  font-style: italic;
 }
 
-textarea { width: 100%; }
+textarea {
+  width: 100%;
+}
 
-.text-hue { font-weight: bolder; }
-
+.text-hue {
+  font-weight: bolder;
+}
 
 #page-header {
-    background-color: #1c35b4;
+  background-color: #1c35b4;
 }
-#page-header p, #page-header a, #page-header h1, #page-header h2 {
-    color: white;
-}
-
-#content>header { 
-    padding: var(--main-margin);
-    background-color: black;
-    text-align: center;
+#page-header p,
+#page-header a,
+#page-header h1,
+#page-header h2 {
+  color: white;
 }
 
-#content>header img {
-    max-width: 100%;
-    max-height: 200px;
+#content > header {
+  padding: var(--main-margin);
+  background-color: black;
+  text-align: center;
+}
+
+#content > header img {
+  max-width: 100%;
+  max-height: 200px;
 }
 
 #page-footer {
-    margin-top: var(--main-margin);
-    margin-bottom: 0px;
-    padding-top: var(--main-margin);
-    text-align: center;
-    color: #dce3e6;
-    background-color: #47a2cc;
-    font-size: small;
+  margin-top: var(--main-margin);
+  margin-bottom: 0px;
+  padding-top: var(--main-margin);
+  text-align: center;
+  color: #dce3e6;
+  background-color: #47a2cc;
+  font-size: small;
 }
-#page-footer footer {   
-    padding: var(--main-margin);
-    background-color: #287799;;
-    font-size: small; 
+#page-footer footer {
+  padding: var(--main-margin);
+  background-color: #287799;
+  font-size: small;
 }
