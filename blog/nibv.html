@@ -23,11 +23,26 @@
             <h3>How to start BrainVISA process from an python script</h3>
         </header>
         <section>
-            <h3>The nibv repository</h3>
-            <p>The <a href="https://github.com/BastienCagna/nibv">nibv project available on github</a> provides a wrap for all the BrainVISA processes.
-                </p>
-                <p>To know what is the name of the process you need you can use the BrainVISA GUI to browser all the available node.</p>
-            
+            <h3>The nibv project</h3>
+            <p>The <a target="_blank" href="https://github.com/BastienCagna/nibv">nibv project available on github</a> provides a wrap for all the BrainVISA processes.
+                Those wraps allow you execute a BrainVISA process from a python script <b>without running the script in the singularity image</b>. 
+                The wraps are in charge to start the singularity image and run the proper command line inside. </p>
+                <p>To find the name of the process you can use the BrainVISA GUI to browser all the available node.</p>
+                <img src="../images/brainvisa_process_name.png" alt="BrainVISA GUI"/>
+            <h3>Running a single process with nipype</h3>
+            <p>Here is a simple example that show you how to run one process using python:</p>
+                <pre>
+# Import the needed process wrap
+from nibv.interfaces.morphologist import GreyWhiteMesh
+
+# Instantiate a process and set the inputs
+proc = GreyWhiteMesh()
+proc.inputs.hemi_cortex = "/path/to/the/existing/Lcortex.nii.gz"
+proc.inputs.white_mesh = "/path/to/the/created/greywhitemesh_L002.gii"
+
+# Now, let's work
+proc.run()
+                </pre>
             <h3>Automatially generate wraps corresponding to your BrainVISA installation</h3>
             <p>To use it, you need first to <a href="./brainvisa-setup.html">install BrainVISA using a singularity release</a>. 
                 Then, run the followings lines in a terminal to download the source and automatically generate the wraps.</p>
@@ -41,20 +56,6 @@ python scripts/generate_wraps.py morphologist ./morphologist.json
             <p>The wraps use the "bv axon-runprocess" command that allow to execute any process when providing 
                 the right inputs. The automatic wrapper read also use this command to list and get metainfos
                 of all the available process. Then it generate the proper python scripts to build the wraps.</p>
-
-            <h3>Example of running a process with nipype</h3>
-            <pre>
-# Import the needed process wrap
-from nibv.interfaces.morphologist import GreyWhiteMesh
-
-# Instantiate a process and set the inputs
-proc = GreyWhiteMesh()
-proc.inputs.hemi_cortex = "/home/bastien/data/archi/t1-1mm-1/002/t1mri/default_acquisition/default_analysis/segmentation/Lcortex_002.nii.gz"
-proc.inputs.white_mesh = "/home/bastien/data/test_greywhitemesh_L002.gii"
-
-# Now, let's work
-proc.run()
-            </pre>
         </section>
     </article>
     <footer id="page-footer">

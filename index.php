@@ -197,7 +197,7 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                         <li><a href="blog/brainvisa-setup.html">Install Brainvisa Development Environment</a></li>
                         <li><a href="blog/nibv.html">NIBV - Nipype wraps of BrainVISA processes</a></li>
                     </ul>
-                    <pre>
+                    <header>
                         <h3>Datasets</h3>
                     </header>
                     <ul>
@@ -226,19 +226,19 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
             <h3>Articles</h3>
             <h4>Machine Learning - Artificial Intelligence</h4>
             <ul>
-                <li><a target="_blank" href="https://hal.archives-ouvertes.fr/hal-03349112/document"><b>Detection of abnormal folding patterns with unsupervised deep generative models</b><br/> Louise Guillon, Bastien Cagna, Benoit Dufumier, Joël Chavas, Denis Rivière, Jean-François Mangin. International Workshop on Machine Learning in Clinical Neuroimaging, 2021</a></li>
-                <li><a target="_blank" href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br/> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
-                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811919307967"><b>Inter-subject pattern analysis: A straightforward and powerful scheme for group-level MVPA</b><br/> Qi Wang, Bastien Cagna, Thierry Chaminade, Sylvain Takerkart. NeuroImage, 2020</a></li>
+                <li><a target="_blank" href="https://hal.archives-ouvertes.fr/hal-03349112/document"><b>Detection of abnormal folding patterns with unsupervised deep generative models</b><br /> Louise Guillon, Bastien Cagna, Benoit Dufumier, Joël Chavas, Denis Rivière, Jean-François Mangin. International Workshop on Machine Learning in Clinical Neuroimaging, 2021</a></li>
+                <li><a target="_blank" href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br /> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
+                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811919307967"><b>Inter-subject pattern analysis: A straightforward and powerful scheme for group-level MVPA</b><br /> Qi Wang, Bastien Cagna, Thierry Chaminade, Sylvain Takerkart. NeuroImage, 2020</a></li>
             </ul>
             <h4>fMRI analysis</h4>
             <ul>
-                <li><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803954/"><b>FMRI-based identity classification accuracy in left temporal and frontal regions predicts speaker recognition performance</b><br/> Virginia Aglieri, Bastien Cagna, Laurent Velly, Sylvain Takerkart, Pascal Belin. Scientific Report, 2021.</a></li>
-                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S2352340920300640?via%3Dihub"><b>Single-trial fMRI activation maps measured during the InterTVA event-related voice localizer. A data set ready for inter-subject pattern analysis</b><br/> Virginia Aglieri, Bastien Cagna, Pascal Belin, Sylvain Takerkart. Data in brief, 2020</a></li>
+                <li><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7803954/"><b>FMRI-based identity classification accuracy in left temporal and frontal regions predicts speaker recognition performance</b><br /> Virginia Aglieri, Bastien Cagna, Laurent Velly, Sylvain Takerkart, Pascal Belin. Scientific Report, 2021.</a></li>
+                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S2352340920300640?via%3Dihub"><b>Single-trial fMRI activation maps measured during the InterTVA event-related voice localizer. A data set ready for inter-subject pattern analysis</b><br /> Virginia Aglieri, Bastien Cagna, Pascal Belin, Sylvain Takerkart. Data in brief, 2020</a></li>
             </ul>
             <h4>Others</h4>
             <ul>
-                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811920310041"><b>A collaborative resource platform for non-human primate neuroimaging</b><br/>Adam Messinger, Nikoloz Sirmpilatze et al. NeuroImage, 2021</a></li>
-                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S089662731931089X"><b>Accelerating the evolution of nonhuman primate neuroimaging</b><br/> Prime-DE consortium. Neuron, 2020</a></li>
+                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811920310041"><b>A collaborative resource platform for non-human primate neuroimaging</b><br />Adam Messinger, Nikoloz Sirmpilatze et al. NeuroImage, 2021</a></li>
+                <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S089662731931089X"><b>Accelerating the evolution of nonhuman primate neuroimaging</b><br /> Prime-DE consortium. Neuron, 2020</a></li>
             </ul>
             <h3>Posters</h3>
             <ul>
@@ -306,4 +306,5 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
 </body>
+
 </html>
