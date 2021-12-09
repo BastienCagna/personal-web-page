@@ -25,11 +25,31 @@
         <section>
             <h3>The nibv project</h3>
             <p>The <a target="_blank" href="https://github.com/BastienCagna/nibv">nibv project available on github</a> provides a wrap for all the BrainVISA processes.
-                Those wraps allow you execute a BrainVISA process from a python script <b>without running the script in the singularity image</b>. 
+                Those wraps allow you execute a BrainVISA process from a python script without running the script in the singularity image. 
                 The wraps are in charge to start the singularity image and run the proper command line inside. </p>
                 <p>To find the name of the process you can use the BrainVISA GUI to browser all the available node.</p>
-                <img src="../images/brainvisa_process_name.png" alt="BrainVISA GUI"/>
-            <h3>Running a single process with nipype</h3>
+            <figure class="col-6">
+                <img src="../images/brainvisa_process_name.png" alt="BrainVISA GUI" width="60%" height="auto"/>
+                <figcaption>
+                    Showing the Grey White Mesh process in BrainVISA
+                </figcaption>
+            </figure>
+
+            <h4>Install the interfaces using automatic build</h4>
+            <p>To use it, you need first to <a href="./brainvisa-setup.html">install BrainVISA using a singularity release</a>. 
+                Then, run the followings lines in a terminal to download the source and automatically generate the wraps.</p>
+            <pre>
+git clone https://github.com/BastienCagna/nibv.git
+cd nibv
+python setup.py develop
+python scripts/generate_wraps.py
+            </pre>
+            <p>N.B: if you have trouble during the installation, try to add "--user" to the python setup.py line to install the package only for you.</p>
+            <p>The wraps use the "bv axon-runprocess" command that allow to execute any process when providing 
+                the right inputs. The automatic wrapper read also use this command to list and get metainfos
+                of all the available process. Then it generate the proper python scripts to build the wraps.</p>
+
+            <h4>Running a single process with nipype</h4>
             <p>Here is a simple example that show you how to run one process using python:</p>
                 <pre>
 # Import the needed process wrap
@@ -43,19 +63,6 @@ proc.inputs.white_mesh = "/path/to/the/created/greywhitemesh_L002.gii"
 # Now, let's work
 proc.run()
                 </pre>
-            <h3>Automatially generate wraps corresponding to your BrainVISA installation</h3>
-            <p>To use it, you need first to <a href="./brainvisa-setup.html">install BrainVISA using a singularity release</a>. 
-                Then, run the followings lines in a terminal to download the source and automatically generate the wraps.</p>
-            <pre>
-git clone https://github.com/BastienCagna/nibv.git
-cd nibv
-python setup.py develop
-python scripts/generate_wraps.py morphologist ./morphologist.json
-            </pre>
-            <p>N.B: if you have trouble during the installation, try to add "--user" to the python setup.py line to install the package only for you.</p>
-            <p>The wraps use the "bv axon-runprocess" command that allow to execute any process when providing 
-                the right inputs. The automatic wrapper read also use this command to list and get metainfos
-                of all the available process. Then it generate the proper python scripts to build the wraps.</p>
         </section>
     </article>
     <footer id="page-footer">
