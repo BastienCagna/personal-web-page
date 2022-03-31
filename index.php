@@ -131,22 +131,6 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                 </li>
                 <li class="project">
                     <div class="illustration">
-                        <img src="images/primere.png" alt="Prime-RE logo" />
-                    </div>
-                    <div class="content">
-                        <h3>PRIME-RE</h3>
-                        <div class="description">
-                            <p>PRIMate-Ressource Exchange aims to provide an overview of the main difficulties and curate a collection of solutions that currently exist within the broader NHP-MRI community for specific processing steps that are commonly performed on NHP MRI data.</p>
-                            <ul class="links">
-                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
-                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
-                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li class="project">
-                    <div class="illustration">
                         <img src="images/wbv-logo.png" alt="WebBrainViewer logo" />
                     </div>
                     <div class="content">
@@ -157,6 +141,22 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                                 <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/examples">Demo</a></li>
                                 <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
                                 <li><a target="_blank" href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="project">
+                    <div class="illustration">
+                        <img src="images/primere.png" alt="Prime-RE logo" />
+                    </div>
+                    <div class="content">
+                        <h3>PRIME-RE</h3>
+                        <div class="description">
+                            <p>PRIMate-Ressource Exchange aims to provide an overview of the main difficulties and curate a collection of solutions that currently exist within the broader NHP-MRI community for specific processing steps that are commonly performed on NHP MRI data.</p>
+                            <ul class="links">
+                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
                             </ul>
                         </div>
                     </div>
