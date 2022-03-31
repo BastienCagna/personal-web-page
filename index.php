@@ -147,6 +147,22 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                 </li>
                 <li class="project">
                     <div class="illustration">
+                        <!--<img src="images/primere.png" alt="Prime-RE logo" />-->
+                    </div>
+                    <div class="content">
+                        <h3>SHPG</h3>
+                        <div class="description">
+                            <p>Create HTML page easily in Python scripts.</p>
+                            <!--<ul class="links">
+                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
+                            </ul>-->
+                        </div>
+                    </div>
+                </li>
+                <li class="project">
+                    <div class="illustration">
                         <img src="images/primere.png" alt="Prime-RE logo" />
                     </div>
                     <div class="content">
