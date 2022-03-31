@@ -1,2 +1,4 @@
 <?php 
-exec('git pull > pull_stdout.txt &'); ?>
+$out = shell_exec('git pull'); 
+echo "Output:<br />".$out;
+?>
