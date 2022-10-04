@@ -67,7 +67,7 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
             <img src="images/baniere_neuro.png" />
         </header>
         <section id="intro">
-            <div class="jumbotron">
+            <div class="jumbotron" style="padding-top: 20px; height-min: 290px;">
                 <img src="./images/photo.png" alt="" width="250px" height="auto" style="float: left; margin-right: 20px;" />
                 <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
                     <a href="http://int.univ-amu.fr">Institut de Neurosciences de la Timone in Marseille, France</a>
