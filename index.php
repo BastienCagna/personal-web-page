@@ -67,7 +67,8 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
             <img src="images/baniere_neuro.png" />
         </header>-->
         <section id="intro">
-            <div class="jumbotron">
+            <div class="jumbotron" style="padding-top: 20px; min-height: 290px;">
+                <img src="./images/photo.png" alt="" width="250px" height="auto" style="float: left; margin-right: 20px;" />
                 <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
                     <a href="http://int.univ-amu.fr">Institut de Neurosciences de la Timone in Marseille, France</a>
                     , I am now working at <a href="https://joliot.cea.fr/drf/joliot/Pages/Entites_de_recherche/NeuroSpin.aspx">
@@ -131,22 +132,6 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                 </li>
                 <li class="project">
                     <div class="illustration">
-                        <img src="images/primere.png" alt="Prime-RE logo" />
-                    </div>
-                    <div class="content">
-                        <h3>PRIME-RE</h3>
-                        <div class="description">
-                            <p>PRIMate-Ressource Exchange aims to provide an overview of the main difficulties and curate a collection of solutions that currently exist within the broader NHP-MRI community for specific processing steps that are commonly performed on NHP MRI data.</p>
-                            <ul class="links">
-                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
-                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
-                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </li>
-                <li class="project">
-                    <div class="illustration">
                         <img src="images/wbv-logo.png" alt="WebBrainViewer logo" />
                     </div>
                     <div class="content">
@@ -157,6 +142,53 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                                 <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/examples">Demo</a></li>
                                 <li><a target="_blank" href="http://bablab.fr/web-brain-viewer/docs">Documentation</a></li>
                                 <li><a target="_blank" href="https://github.com/BastienCagna/web-brain-viewer">Git repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="project">
+                    <div class="illustration">
+                        <img src="https://github.com/BastienCagna/shpg/raw/3e50f84e079ee00ad83b614161923425c09ef3e6/doc/logo.png" alt="SHPG logo" />
+                    </div>
+                    <div class="content">
+                        <h3>Static HTML Page Generator</h3>
+                        <div class="description">
+                            <p>SHPG is a python package dedicated to HTML page creation. Mainly for easy reporting purposes, it provides some simple tools to create basic HTML documents.</p>
+                            <ul class="links">
+                                <li><a target="_blank" href="https://bastiencagna.github.io/shpg/">Documentation</a></li>
+                                <li><a target="_blank" href="https://github.com/BastienCagna/shpg">Github repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <!--<li class="project">
+                    <div class="illustration">
+                        <img src="images/primere.png" alt="Prime-RE logo" />
+                    </div>
+                    <div class="content">
+                        <h3>SHPG</h3>
+                        <div class="description">
+                            <p>Create HTML page easily in Python scripts.</p>
+                            <ul class="links">
+                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>-->
+                <li class="project">
+                    <div class="illustration">
+                        <img src="images/primere.png" alt="Prime-RE logo" />
+                    </div>
+                    <div class="content">
+                        <h3>PRIME-RE</h3>
+                        <div class="description">
+                            <p>PRIMate-Ressource Exchange aims to provide an overview of the main difficulties and curate a collection of solutions that currently exist within the broader NHP-MRI community for specific processing steps that are commonly performed on NHP MRI data.</p>
+                            <ul class="links">
+                                <li><a target="_blank" href="https://prime-re.github.io/">Web page</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io/wiki">Wiki</a></li>
+                                <li><a target="_blank" href="https://github.com/PRIME-RE/prime-re.github.io">Git repository</a></li>
                             </ul>
                         </div>
                     </div>
