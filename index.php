@@ -146,6 +146,21 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                         </div>
                     </div>
                 </li>
+                <li class="project">
+                    <div class="illustration">
+                        <img src="https://github.com/BastienCagna/shpg/blob/3e50f84e079ee00ad83b614161923425c09ef3e6/doc/logo.png" alt="SHPG logo" />
+                    </div>
+                    <div class="content">
+                        <h3>Static HTML Page Generator</h3>
+                        <div class="description">
+                            <p>SHPG is a python package dedicated to HTML page creation. Mainly for easy reporting purposes, it provides some simple tools to create basic HTML documents.</p>
+                            <ul class="links">
+                                <li><a target="_blank" href="https://bastiencagna.github.io/shpg/">Documentation</a></li>
+                                <li><a target="_blank" href="https://github.com/BastienCagna/shpg">Github repository</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
                 <!--<li class="project">
                     <div class="illustration">
                         <img src="images/primere.png" alt="Prime-RE logo" />
