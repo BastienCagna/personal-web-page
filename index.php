@@ -68,13 +68,18 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
         </header>
         <section id="intro">
             <div class="jumbotron">
-                <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
+                <!-- <div class="col-md-4">
+                </div> -->
+                <!-- <div> -->
+                    <img src="images/photo.png" width="250px" height="auto" style="float: left"/>
+                    <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
                     <a href="http://int.univ-amu.fr">Institut de Neurosciences de la Timone in Marseille, France</a>
                     , I am now working at <a href="https://joliot.cea.fr/drf/joliot/Pages/Entites_de_recherche/NeuroSpin.aspx">
                         Neurospin in Saclays, France</a> on automatic labelling of the brain sulci using deep learning.
                     Here you can find
                     some resources that I setup during my job.
-                </p>
+                    </p>
+                <!-- </div> -->
             </div>
         </section>
 
