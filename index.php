@@ -148,7 +148,7 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                 </li>
                 <li class="project">
                     <div class="illustration">
-                        <img src="https://github.com/BastienCagna/shpg/blob/3e50f84e079ee00ad83b614161923425c09ef3e6/doc/logo.png" alt="SHPG logo" />
+                        <img src="https://github.com/BastienCagna/shpg/raw/3e50f84e079ee00ad83b614161923425c09ef3e6/doc/logo.png" alt="SHPG logo" />
                     </div>
                     <div class="content">
                         <h3>Static HTML Page Generator</h3>
