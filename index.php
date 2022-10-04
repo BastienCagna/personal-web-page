@@ -63,9 +63,9 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
     <div class="col-md-2">
     </div>
     <div id="content" class="container col-md-8">
-        <header>
+        <!--<header>
             <img src="images/baniere_neuro.png" />
-        </header>
+        </header>-->
         <section id="intro">
             <div class="jumbotron">
                 <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
