@@ -5,7 +5,7 @@ function secureInput($str)
     return htmlspecialchars(trim($str), ENT_QUOTES, "UTF-8");
 }
 
-if (isset($_POST['send']) && $_POST['send'] === "Send") {
+if (isset($_POST['send']) && $_POST['send'] === "Send" && isset($_POST['lastname']) && $_POST['lastname'] == "chantale") {
     // Verify inputs
     $name = secureInput($_POST['name']);
     $fname = secureInput($_POST['firstname']);
@@ -19,10 +19,10 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
     } elseif (empty($name) || empty($message) || empty($email) || empty($subject)) {
         $msg_error = "At least one field is not filled.";
     } else {
-        $formcontent = "From: $name \n\n Message: \n$message";
+        $formcontent = "From: ".strip_tags($name)." \n\n Message: \n".strip_tags($message);
         $recipient = "bastiencagna@gmail.com";
-        $subject = "[WEBPAGE] " . $subject;
-        $mailheader = "From: $email \r\n";
+        $subject = "[WEBPAGE] " . strip_tags($subject);
+        $mailheader = "From: " . strip_tags($email) ." \r\n";
         mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
         $info_msg = "Your message have been send to me. I will read it in next hours/days. Thank you.";
         unset($_POST['name']);
@@ -306,6 +306,7 @@ if (isset($_POST['send']) && $_POST['send'] === "Send") {
                 <div class="col-md-10">
                     <textarea id="message" name="message" rows="6"><?php if (isset($name)) echo $name; ?></textarea>
                 </div>
+                <input type="text" id="lastname" name="lastname" value="chantale" class="famtom" />
                 <input type="submit" id="send" name="send" value="Send" />
             </form>
             <p>No data will be save on any server except on my mail server.</p>

@@ -81,6 +81,7 @@ textarea {
   font-weight: bolder;
 }
 
+
 #page-header {
   background-color: #1c35b4;
 }
@@ -115,4 +116,11 @@ textarea {
   padding: var(--main-margin);
   background-color: #287799;
   font-size: small;
+}
+
+.famtom {
+  display: none;
+  position: fixed;
+  top: -2000;
+  left: -2000;
 }
