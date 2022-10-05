@@ -1,8 +1,36 @@
 <!DOCTYPE HTML>
 <?php
+
+function getUserIP()
+{
+    // Get real visitor IP behind CloudFlare network
+    if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
+              $_SERVER['REMOTE_ADDR'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+              $_SERVER['HTTP_CLIENT_IP'] = $_SERVER["HTTP_CF_CONNECTING_IP"];
+    }
+    $client  = @$_SERVER['HTTP_CLIENT_IP'];
+    $forward = @$_SERVER['HTTP_X_FORWARDED_FOR'];
+    $remote  = $_SERVER['REMOTE_ADDR'];
+
+    if(filter_var($client, FILTER_VALIDATE_IP))
+    {
+        $ip = $client;
+    }
+    elseif(filter_var($forward, FILTER_VALIDATE_IP))
+    {
+        $ip = $forward;
+    }
+    else
+    {
+        $ip = $remote;
+    }
+
+    return $ip;
+}
+
 function secureInput($str)
 {
-    return htmlspecialchars(trim($str), ENT_QUOTES, "UTF-8");
+    return htmlspecialchars(trim(strip_tags($str)), ENT_QUOTES, "UTF-8");
 }
 
 if (isset($_POST['send']) && $_POST['send'] === "Send" && isset($_POST['lastname']) && $_POST['lastname'] == "chantale") {
@@ -12,17 +40,18 @@ if (isset($_POST['send']) && $_POST['send'] === "Send" && isset($_POST['lastname
     $subject = secureInput($_POST['subject']);
     $message = secureInput($_POST['message']);
     $email = secureInput($_POST['email']);
+    $ip = getUserIP();
 
-    if (!empty($firstname)) {
+    if (!empty($firstname) | $name=="Lackisa") {
         // Honeypot ! This field is hidden and connot be filled by I human
         $info_msg = "Thanks";
     } elseif (empty($name) || empty($message) || empty($email) || empty($subject)) {
         $msg_error = "At least one field is not filled.";
     } else {
-        $formcontent = "From: ".strip_tags($name)." \n\n Message: \n".strip_tags($message);
+        $formcontent = "From: ".$name." \n\n Message: \n".$message;
         $recipient = "bastiencagna@gmail.com";
-        $subject = "[WEBPAGE] " . strip_tags($subject);
-        $mailheader = "From: " . strip_tags($email) ." \r\n";
+        $subject = "[WEBPAGE] " . $subject;
+        $mailheader = "From: $email  (IP: $ip) \r\n";
         mail($recipient, $subject, $formcontent, $mailheader) or die("Error!");
         $info_msg = "Your message have been send to me. I will read it in next hours/days. Thank you.";
         unset($_POST['name']);
@@ -244,7 +273,7 @@ if (isset($_POST['send']) && $_POST['send'] === "Send" && isset($_POST['lastname
             <h4>Machine Learning - Artificial Intelligence</h4>
             <ul>
                 <li><a target="_blank" href="https://hal.archives-ouvertes.fr/hal-03349112/document"><b>Detection of abnormal folding patterns with unsupervised deep generative models</b><br /> Louise Guillon, Bastien Cagna, Benoit Dufumier, Joël Chavas, Denis Rivière, Jean-François Mangin. International Workshop on Machine Learning in Clinical Neuroimaging, 2021</a></li>
-                <li><a target="_blank" href="https://arxiv.org/pdf/2004.02804.pdf"><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br /> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. Bio arXiv preprint, 2020</a></li>
+                <li><a target="_blank" href="https://ieeexplore.ieee.org/abstract/document/9206887"><!-- href="https://arxiv.org/pdf/2004.02804.pdf">--><b>Mapping individual differences in cortical architecture using multi-view representation learning</b><br /> Akrem Sellami, François Xavier Dupé, Bastien Cagna, Hachem Kadri, Stéphane Ayache, Thierry Artières, Sylvain Takerkart. International Joint Conference on Neural Networks (IJCNN), 2020</a></li>
                 <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811919307967"><b>Inter-subject pattern analysis: A straightforward and powerful scheme for group-level MVPA</b><br /> Qi Wang, Bastien Cagna, Thierry Chaminade, Sylvain Takerkart. NeuroImage, 2020</a></li>
             </ul>
             <h4>fMRI analysis</h4>
@@ -254,7 +283,11 @@ if (isset($_POST['send']) && $_POST['send'] === "Send" && isset($_POST['lastname
             </ul>
             <h4>Others</h4>
             <ul>
-                <li><a target="_blank" href="https://fjfsdata01prod.blob.core.windows.net/articles/files/803934/pubmed-zip/.versions/2/.package-entries/fninf-16-803934-r1/fninf-16-803934.pdf?sv=2018-03-28&sr=b&sig=O051VxSEJUtdZCdmPqSfRvo2tBVhQI9egLzAXvPK3k8%3D&se=2022-10-04T20%3A28%3A13Z&sp=r&rscd=attachment%3B%20filename%2A%3DUTF-8%27%27fninf-16-803934.pdf"><b>Browsing Multiple Subjects When the Atlas Adaptation Cannot Be Achieved via a Warping Strategy</b><br />Denis Rivière, Yann Leprince, Nicole Labra, Nabil Vindas, Ophélie Foubet, Bastien Cagna, Kep Kee Loh, William Hopkins, Antoine Balzeau, Martial Mancip, Jessica Lebenberg, Yann Cointepas, Olivier Coulon and Jean-François Mangin. Frontiers in Neuroinformatics, 2022</a></li>
+                <li><a target="_blank" href="https://fjfsdata01prod.blob.core.windows.net/articles/files/803934/pubmed-zip/.versions/2/.package-entries/fninf-16-803934-r1/fninf-16-803934.pdf?sv=2018-03-28&sr=b&sig=O051VxSEJUtdZCdmPqSfRvo2tBVhQI9egLzAXvPK3k8%3D&se=2022-10-04T20%3A28%3A13Z&sp=r&rscd=attachment%3B%20filename%2A%3DUTF-8%27%27fninf-16-803934.pdf">
+                    <b>Browsing Multiple Subjects When the Atlas Adaptation Cannot Be Achieved via a Warping Strategy</b>
+                    <br />Denis Rivière, Yann Leprince, Nicole Labra, Nabil Vindas, Ophélie Foubet, Bastien Cagna, Kep Kee Loh, William Hopkins, Antoine Balzeau, Martial Mancip, Jessica Lebenberg, Yann Cointepas, Olivier Coulon and Jean-François Mangin. Frontiers in Neuroinformatics, 2022
+                    </a>
+                </li>
                 <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S1053811920310041"><b>A collaborative resource platform for non-human primate neuroimaging</b><br />Adam Messinger, Nikoloz Sirmpilatze et al. NeuroImage, 2021</a></li>
                 <li><a target="_blank" href="https://www.sciencedirect.com/science/article/pii/S089662731931089X"><b>Accelerating the evolution of nonhuman primate neuroimaging</b><br /> Prime-DE consortium. Neuron, 2020</a></li>
             </ul>
