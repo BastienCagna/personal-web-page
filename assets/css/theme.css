@@ -120,7 +120,10 @@ textarea {
 
 .famtom {
   display: none;
-  position: fixed;
-  top: -2000;
-  left: -2000;
+  font-size: 6px;
+  padding: 0px;
+  color: white;
+  border-color: white;
+  width: 10px;
+  height: 10px;
 }
