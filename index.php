@@ -97,7 +97,7 @@ if (isset($_POST['send']) && $_POST['send'] === "Send" && isset($_POST['lastname
         </header>-->
         <section id="intro">
             <div class="jumbotron" style="padding-top: 20px; min-height: 290px;">
-                <img src="./images/photo512.png" alt="" width="250px" height="auto" style="float: left; margin-right: 20px;" />
+                <img src="./images/photo250.png" alt="" width="250px" height="auto" style="float: left; margin-right: 20px;" />
                 <p>After working almost 5 years on preprocessing and analysis of functional MRI data at the
                     <a href="http://int.univ-amu.fr">Institut de Neurosciences de la Timone in Marseille, France</a>
                     , I am now working at <a href="https://joliot.cea.fr/drf/joliot/Pages/Entites_de_recherche/NeuroSpin.aspx">
