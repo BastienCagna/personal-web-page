@@ -1,56 +1,78 @@
-#projects + * { clear: both; }
-#projects ul {
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
-}
-.project {
-    margin: 4px;
-    padding: 4px;
-    text-align: justify;
-    display: flex;
-    flex-direction: row;
-}
 
-.project .illustration {
-    max-width: 15%;
-    max-height: 20%;
-    margin: 10px;
+#intro {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    text-align: justify;
 }
-.project .illustration img {
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto;
+.bold {
+    font-weight: 900;
 }
-.project h3 {
-    border-bottom: none;
+#pubs {
+    background-color: #5ba0bb;
+    padding: 20px;
 }
-.project .content {
-    padding: 4px;
-}
-.project .links {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.project .links a {
-    background-color: #a3ecf3;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 3px;
-    font-size: 10pt;
+#pubs h2, #pubs h3 {
+    color: white;
     font-weight: bold;
 }
-.project .links a:hover {
-    background-color: #92d0d6;
-    text-decoration: none;
+#pubs a {
+    color: black;
+}
+#pubs a:hover {
+    color: rgb(51, 51, 51);
+}
+#resources {
+    font-size: 11pt;
+}
+#resources h3 {
+    font-size: 18pt;
 }
 
-#firstname {
-    width: 0;
-    height: 0;
-    opacity: 100%;
-    border: 0px;
+#publications ul {
+    list-style: none;
 }
+#publications ul li {
+    margin-top: 10px;
+    line-height: 120%;
+}
+#publications ul li a {
+    color: rgb(3, 39, 71);
+    font-weight: bold;
+}
+#publications ul li a:hover{
+    color:rgb(182, 214, 243);
+}
+span.authors {
+    color: black;
+    font-weight: normal;
+    font-size: 9pt;
+}
+
+.cv-links {
+    margin: auto;
+    margin-top: 30px;
+}
+.cv-btn {
+    margin: 10px;
+    padding: 10px;
+    color: #d8eec5;
+    background-color: #057aa8;
+    opacity: .8;
+    border-radius: 6px;
+}
+.cv-btn:visited {
+    color: inherit
+}
+.cv-btn:hover {
+    opacity: 1;
+    color: white;
+}
+
+
+#lastname {
+    display: none;
+  }
+  .advert {
+    font-size: 10pt;
+    float: right;
+  }
