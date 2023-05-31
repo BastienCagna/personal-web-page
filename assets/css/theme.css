@@ -1,129 +1,75 @@
 body {
-  --main-margin: 30px;
-  --main-small-margin: 8px;
+  margin: 0px;
+  padding: 0px;
+
+  background-color: #fafafa;
+}
+
+p, a, li, th, td {
+
+  font-family: 'Poppins', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Tsukimi Rounded', sans-serif;
+}
+
+#page-header {
+  padding: 6px;
+  background-color: #04384d;
+}
+
+ul.main-nav {
+  margin: 0px;
+  padding: 0px;
+  float: right;
+}
+ul.main-nav li {
+  display: inline-block;
+  margin: 4px 8px;
+  padding: 6px;
+  vertical-align: middle;
+  text-align: center;
+  height: 36px;
+  border-radius: 6px;
+  color: #b1c4a0
+}
+ul.main-nav li a {
+  color: inherit;
+  font-family: 'Poppins', sans-serif;
+}
+ul.main-nav li:hover  {
+  background-color: rgb(56, 67, 77);
+}
+
+
+.brand {
+  font-family: 'Tsukimi Rounded', sans-serif;
+  font-size: 24pt;
+  color: white;
+  font-weight: 600;
 }
 
 .container {
-  max-width: 1000px;
+  width: 1000px;
+  margin: auto;
 }
-
-section {
-  margin: var(--main-margin) 0px;
+.orbit-section {
+  background-color: black;
 }
-
-section header a {
+.container header a{
   float: right;
-  font-size: 9pt;
 }
 
-h1 {
-  font-size: 24pt;
-}
-h2 {
-  display: inline-block;
-  clear: both;
-  margin: 8px;
-  margin-bottom: 16px;
-  padding: 6px 12px;
-  border-radius: 12px;
-  background-color: black;
-  color: white;
-  font-size: 18pt;
-  font-weight: bold;
-}
-h3 {
-  font-size: 16pt;
-  font-weight: bold;
-  border-bottom: 2px solid black;
-}
-h4 {
-  font-size: 14pt;
-  text-align: center;
-}
-p,
-a,
-li,
-td,
-th,
-label,
-input {
-  font-size: 11pt;
-  font-family: Lucidatypewriter, monospace;
-}
-p {
-  font-family: Georgia, serif;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: Lucidatypewriter, monospace;
+.flex {
+  display: flex;
 }
 
-pre {
-  padding: 1em;
-}
-
-caption,
-figcaption {
-  font-size: small;
-  text-align: center;
-  font-style: italic;
-}
-
-textarea {
-  width: 100%;
-}
-
-.text-hue {
-  font-weight: bolder;
-}
-
-
-#page-header {
-  background-color: #1c35b4;
-}
-#page-header p,
-#page-header a,
-#page-header h1,
-#page-header h2 {
-  color: white;
-}
-
-#content > header {
-  padding: var(--main-margin);
-  background-color: black;
-  text-align: center;
-}
-
-#content > header img {
-  max-width: 100%;
-  max-height: 200px;
-}
 
 #page-footer {
-  margin-top: var(--main-margin);
-  margin-bottom: 0px;
-  padding-top: var(--main-margin);
+  margin: 0px;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #04384d;
   text-align: center;
-  color: #dce3e6;
-  background-color: #47a2cc;
-  font-size: small;
-}
-#page-footer footer {
-  padding: var(--main-margin);
-  background-color: #287799;
-  font-size: small;
-}
-
-.famtom {
-  display: none;
-  font-size: 6px;
-  padding: 0px;
-  color: white;
-  border-color: white;
-  width: 10px;
-  height: 10px;
+  color: #b1c4a0
 }
